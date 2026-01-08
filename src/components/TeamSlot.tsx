@@ -87,15 +87,20 @@ export function TeamSlot({
       {hasMega && (
         <button
           onClick={onToggleMega}
-          className={`font-medium rounded transition-colors ${
-            compact ? 'mt-1 px-1.5 py-0.5 text-[10px]' : 'mt-2 px-2 py-0.5 text-xs'
+          className={`rounded transition-all ${
+            compact ? 'mt-1 p-0.5' : 'mt-2 p-1'
           } ${
             isMega
-              ? 'bg-purple-500 text-white hover:bg-purple-600'
-              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900'
+              ? 'bg-purple-500 hover:bg-purple-600 ring-2 ring-purple-300'
+              : 'bg-gray-200 dark:bg-gray-700 hover:bg-purple-100 dark:hover:bg-purple-900 opacity-50 hover:opacity-100'
           }`}
+          title={isMega ? 'Disable Mega Evolution' : 'Enable Mega Evolution'}
         >
-          {isMega ? 'M' : 'M'}
+          <img
+            src="/mega-icon.png"
+            alt="Mega"
+            className={`${compact ? 'w-4 h-4' : 'w-5 h-5'} ${isMega ? '' : 'grayscale'}`}
+          />
         </button>
       )}
     </div>

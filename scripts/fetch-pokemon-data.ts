@@ -4,21 +4,29 @@
  * This script fetches Pokemon data from the PokeAPI and generates:
  * - src/data/pokemon.json - All Pokemon in the Pokedex
  * - src/data/megas.json - Mega evolution mappings
- * - public/sprites/*.png - Pokemon sprite images
+ * - public/sprites/*.png - Pokemon sprite images (from PokeOS)
+ *
+ * Sprites: Uses PokeOS Home renders for consistent, high-quality images.
+ * If a sprite is unavailable, megas will fall back to /sprites/default-mega.png.
  *
  * Usage: npm run fetch-data
  */
 
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 
-const POKEAPI_BASE = 'https://pokeapi.co/api/v2';
+const POKEAPI_BASE = "https://pokeapi.co/api/v2";
+const POKEOS_SPRITE_BASE = "https://s3.pokeos.com/pokeos-uploads/assets/pokemon/home/render";
+
 // Pokemon Legends Z-A uses two Pokedex IDs
 const POKEDEX_IDS = [34, 35];
 
 // Output paths
-const DATA_DIR = path.join(process.cwd(), 'src/data');
-const SPRITES_DIR = path.join(process.cwd(), 'public/sprites');
+const DATA_DIR = path.join(process.cwd(), "src/data");
+const SPRITES_DIR = path.join(process.cwd(), "public/sprites");
+
+// Default placeholder sprite path (user should provide this file)
+const DEFAULT_SPRITE = "/sprites/default-mega.png";
 
 interface PokeAPIPokedex {
   name: string;
@@ -58,14 +66,6 @@ interface PokeAPIPokemon {
       name: string;
     };
   }>;
-  sprites: {
-    front_default: string | null;
-    other?: {
-      'official-artwork'?: {
-        front_default: string | null;
-      };
-    };
-  };
 }
 
 interface Pokemon {
@@ -100,14 +100,18 @@ async function fetchJson<T>(url: string, retries = 3): Promise<T> {
       return response.json() as Promise<T>;
     } catch (error) {
       if (attempt === retries - 1) {
-        throw new Error(`Failed to fetch ${url} after ${retries} attempts: ${error}`);
+        throw new Error(
+          `Failed to fetch ${url} after ${retries} attempts: ${error}`,
+        );
       }
       const delay = 1000 * (attempt + 1);
-      console.warn(`  Retry ${attempt + 1}/${retries} for ${url} in ${delay}ms...`);
-      await new Promise(resolve => setTimeout(resolve, delay));
+      console.warn(
+        `  Retry ${attempt + 1}/${retries} for ${url} in ${delay}ms...`,
+      );
+      await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
-  throw new Error('Unreachable');
+  throw new Error("Unreachable");
 }
 
 async function downloadSprite(url: string, filename: string): Promise<boolean> {
@@ -119,7 +123,9 @@ async function downloadSprite(url: string, filename: string): Promise<boolean> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      console.warn(`  Warning: Could not download sprite from ${url}: HTTP ${response.status}`);
+      console.warn(
+        `  Warning: Could not download sprite from ${url}: HTTP ${response.status}`,
+      );
       return false;
     }
     const buffer = await response.arrayBuffer();
@@ -131,27 +137,45 @@ async function downloadSprite(url: string, filename: string): Promise<boolean> {
   }
 }
 
+function getPokeOSSpriteUrl(pokemonId: number, megaVariant?: string | null): string {
+  if (!megaVariant) {
+    // Regular mega (no X/Y/Z variant)
+    return `${POKEOS_SPRITE_BASE}/${pokemonId}-mega.png`;
+  }
+  // Mega with variant (X, Y, or Z)
+  return `${POKEOS_SPRITE_BASE}/${pokemonId}-mega-${megaVariant}.png`;
+}
+
+function getPokeOSBaseSpriteUrl(pokemonId: number): string {
+  return `${POKEOS_SPRITE_BASE}/${pokemonId}.png`;
+}
+
 function formatDisplayName(name: string): string {
   return name
-    .split('-')
-    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
 }
 
 function getEnglishName(species: PokeAPISpecies): string {
-  const englishEntry = species.names.find(n => n.language.name === 'en');
+  const englishEntry = species.names.find((n) => n.language.name === "en");
   return englishEntry?.name || formatDisplayName(species.name);
 }
 
-function formatMegaDisplayName(baseDisplayName: string, megaName: string): string {
-  if (megaName.includes('-mega-x')) return `Mega ${baseDisplayName} X`;
-  if (megaName.includes('-mega-y')) return `Mega ${baseDisplayName} Y`;
+function formatMegaDisplayName(
+  baseDisplayName: string,
+  megaName: string,
+): string {
+  if (megaName.includes("-mega-x")) return `Mega ${baseDisplayName} X`;
+  if (megaName.includes("-mega-y")) return `Mega ${baseDisplayName} Y`;
+  if (megaName.includes("-mega-z")) return `Mega ${baseDisplayName} Z`;
   return `Mega ${baseDisplayName}`;
 }
 
 function getMegaVariant(name: string): string | null {
-  if (name.includes('-mega-x')) return 'x';
-  if (name.includes('-mega-y')) return 'y';
+  if (name.includes("-mega-x")) return "x";
+  if (name.includes("-mega-y")) return "y";
+  if (name.includes("-mega-z")) return "z";
   return null;
 }
 
@@ -163,7 +187,7 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
     const displayName = getEnglishName(species);
 
     // Find the default variety (base form)
-    const defaultVariety = species.varieties.find(v => v.is_default);
+    const defaultVariety = species.varieties.find((v) => v.is_default);
     if (!defaultVariety) {
       console.warn(`  No default variety for ${species.name}`);
       return null;
@@ -171,19 +195,11 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
 
     const pokemon = await fetchJson<PokeAPIPokemon>(defaultVariety.pokemon.url);
 
-    // Get sprite URL (prefer official artwork, fallback to front_default)
-    const spriteUrl =
-      pokemon.sprites.other?.['official-artwork']?.front_default ||
-      pokemon.sprites.front_default;
+    // Download base sprite from PokeOS
+    const baseSpriteUrl = getPokeOSBaseSpriteUrl(pokemon.id);
+    const spriteFilename = `${pokemon.id}.png`;
+    const spriteDownloaded = await downloadSprite(baseSpriteUrl, spriteFilename);
 
-    if (!spriteUrl) {
-      console.warn(`  No sprite for ${pokemon.name}`);
-      return null;
-    }
-
-    // Download sprite - skip Pokemon if sprite download fails
-    const spriteFilename = `${pokemon.name}.png`;
-    const spriteDownloaded = await downloadSprite(spriteUrl, spriteFilename);
     if (!spriteDownloaded) {
       console.warn(`  Skipping ${pokemon.name} - sprite download failed`);
       return null;
@@ -192,29 +208,44 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
     // Find mega evolutions
     const megas: MegaEvolution[] = [];
     for (const variety of species.varieties) {
-      if (variety.pokemon.name.includes('-mega')) {
-        const megaPokemon = await fetchJson<PokeAPIPokemon>(variety.pokemon.url);
-        const megaSpriteUrl =
-          megaPokemon.sprites.other?.['official-artwork']?.front_default ||
-          megaPokemon.sprites.front_default;
+      if (variety.pokemon.name.includes("-mega")) {
+        console.log(`  -> Mega found: ${variety.pokemon.name}`);
+        const megaPokemon = await fetchJson<PokeAPIPokemon>(
+          variety.pokemon.url,
+        );
 
-        if (megaSpriteUrl) {
-          const megaSpriteFilename = `${megaPokemon.name}.png`;
-          const megaSpriteDownloaded = await downloadSprite(megaSpriteUrl, megaSpriteFilename);
+        const megaVariant = getMegaVariant(megaPokemon.name);
+        const megaSpriteUrl = getPokeOSSpriteUrl(pokemon.id, megaVariant);
 
-          // Only add mega if sprite downloaded successfully
-          if (megaSpriteDownloaded) {
-            megas.push({
-              variant: getMegaVariant(megaPokemon.name),
-              name: megaPokemon.name,
-              displayName: formatMegaDisplayName(displayName, megaPokemon.name),
-              types: megaPokemon.types.map(t => t.type.name),
-              sprite: `/sprites/${megaSpriteFilename}`,
-            });
-          } else {
-            console.warn(`  Skipping mega ${megaPokemon.name} - sprite download failed`);
-          }
+        // Construct filename based on variant
+        let megaSpriteFilename: string;
+        if (megaVariant) {
+          megaSpriteFilename = `${pokemon.id}-mega-${megaVariant}.png`;
+        } else {
+          megaSpriteFilename = `${pokemon.id}-mega.png`;
         }
+
+        const megaSpriteDownloaded = await downloadSprite(
+          megaSpriteUrl,
+          megaSpriteFilename,
+        );
+
+        let megaSpritePath: string;
+        if (megaSpriteDownloaded) {
+          console.log(`     Sprite downloaded: ${megaSpriteFilename}`);
+          megaSpritePath = `/sprites/${megaSpriteFilename}`;
+        } else {
+          console.log(`     Using default placeholder for ${megaPokemon.name}`);
+          megaSpritePath = DEFAULT_SPRITE;
+        }
+
+        megas.push({
+          variant: megaVariant,
+          name: megaPokemon.name,
+          displayName: formatMegaDisplayName(displayName, megaPokemon.name),
+          types: megaPokemon.types.map((t) => t.type.name),
+          sprite: megaSpritePath,
+        });
       }
     }
 
@@ -222,7 +253,7 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
       id: pokemon.id,
       name: pokemon.name,
       displayName,
-      types: pokemon.types.map(t => t.type.name),
+      types: pokemon.types.map((t) => t.type.name),
       sprite: `/sprites/${spriteFilename}`,
     };
 
@@ -238,9 +269,10 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
 }
 
 async function main() {
-  console.log('Pokemon Data Fetch Script');
-  console.log('=========================\n');
-  console.log(`Fetching from Pokedex IDs: ${POKEDEX_IDS.join(', ')}\n`);
+  console.log("Pokemon Data Fetch Script");
+  console.log("=========================\n");
+  console.log(`Fetching from Pokedex IDs: ${POKEDEX_IDS.join(", ")}`);
+  console.log(`Sprite source: PokeOS Home renders\n`);
 
   // Ensure directories exist
   if (!fs.existsSync(DATA_DIR)) {
@@ -256,8 +288,12 @@ async function main() {
   for (const pokedexId of POKEDEX_IDS) {
     console.log(`Fetching Pokedex #${pokedexId}...`);
     try {
-      const pokedex = await fetchJson<PokeAPIPokedex>(`${POKEAPI_BASE}/pokedex/${pokedexId}`);
-      console.log(`  Found ${pokedex.pokemon_entries.length} entries in "${pokedex.name}"`);
+      const pokedex = await fetchJson<PokeAPIPokedex>(
+        `${POKEAPI_BASE}/pokedex/${pokedexId}`,
+      );
+      console.log(
+        `  Found ${pokedex.pokemon_entries.length} entries in "${pokedex.name}"`,
+      );
 
       for (const entry of pokedex.pokemon_entries) {
         // Use name as key to deduplicate
@@ -270,7 +306,7 @@ async function main() {
       }
     } catch (error) {
       console.error(`Failed to fetch Pokedex #${pokedexId}: ${error}`);
-      console.error('Continuing with other Pokedexes...\n');
+      console.error("Continuing with other Pokedexes...\n");
     }
   }
 
@@ -278,7 +314,7 @@ async function main() {
   console.log(`\nTotal unique Pokemon: ${entries.length}\n`);
 
   if (entries.length === 0) {
-    console.error('No Pokemon found in any Pokedex. Exiting.');
+    console.error("No Pokemon found in any Pokedex. Exiting.");
     process.exit(1);
   }
 
@@ -304,24 +340,40 @@ async function main() {
       pokemon.push(pokemonWithoutMegas as Pokemon);
     }
 
-    // Rate limiting - be nice to PokeAPI
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Rate limiting - be nice to the APIs
+    await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
   // Sort by ID
   pokemon.sort((a, b) => a.id - b.id);
 
   // Write pokemon.json
-  const pokemonPath = path.join(DATA_DIR, 'pokemon.json');
+  const pokemonPath = path.join(DATA_DIR, "pokemon.json");
   fs.writeFileSync(pokemonPath, JSON.stringify({ pokemon }, null, 2));
   console.log(`\nWrote ${pokemon.length} Pokemon to ${pokemonPath}`);
 
   // Write megas.json
-  const megasPath = path.join(DATA_DIR, 'megas.json');
+  const megasPath = path.join(DATA_DIR, "megas.json");
   fs.writeFileSync(megasPath, JSON.stringify({ megaEvolutions }, null, 2));
-  console.log(`Wrote ${Object.keys(megaEvolutions).length} mega evolutions to ${megasPath}`);
+  console.log(
+    `Wrote ${Object.keys(megaEvolutions).length} mega evolutions to ${megasPath}`,
+  );
 
-  console.log('\nDone!');
+  // Count how many megas are using the default placeholder
+  let defaultCount = 0;
+  for (const megas of Object.values(megaEvolutions)) {
+    for (const mega of megas) {
+      if (mega.sprite === DEFAULT_SPRITE) {
+        defaultCount++;
+      }
+    }
+  }
+
+  if (defaultCount > 0) {
+    console.log(`\nNote: ${defaultCount} mega(s) using default-mega.png placeholder`);
+  }
+
+  console.log("\nDone!");
 }
 
 main().catch(console.error);

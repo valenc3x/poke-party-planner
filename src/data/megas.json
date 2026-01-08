@@ -1,5 +1,41 @@
 {
   "megaEvolutions": {
+    "meganium": [
+      {
+        "variant": null,
+        "name": "meganium-mega",
+        "displayName": "Mega Meganium",
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "sprite": "/sprites/154-mega.png"
+      }
+    ],
+    "emboar": [
+      {
+        "variant": null,
+        "name": "emboar-mega",
+        "displayName": "Mega Emboar",
+        "types": [
+          "fire",
+          "fighting"
+        ],
+        "sprite": "/sprites/500-mega.png"
+      }
+    ],
+    "feraligatr": [
+      {
+        "variant": null,
+        "name": "feraligatr-mega",
+        "displayName": "Mega Feraligatr",
+        "types": [
+          "water",
+          "dragon"
+        ],
+        "sprite": "/sprites/160-mega.png"
+      }
+    ],
     "beedrill": [
       {
         "variant": null,
@@ -9,7 +45,7 @@
           "bug",
           "poison"
         ],
-        "sprite": "/sprites/beedrill-mega.png"
+        "sprite": "/sprites/15-mega.png"
       }
     ],
     "pidgeot": [
@@ -21,7 +57,7 @@
           "normal",
           "flying"
         ],
-        "sprite": "/sprites/pidgeot-mega.png"
+        "sprite": "/sprites/18-mega.png"
       }
     ],
     "ampharos": [
@@ -33,7 +69,7 @@
           "electric",
           "dragon"
         ],
-        "sprite": "/sprites/ampharos-mega.png"
+        "sprite": "/sprites/181-mega.png"
       }
     ],
     "gyarados": [
@@ -45,7 +81,97 @@
           "water",
           "dark"
         ],
-        "sprite": "/sprites/gyarados-mega.png"
+        "sprite": "/sprites/130-mega.png"
+      }
+    ],
+    "barbaracle": [
+      {
+        "variant": null,
+        "name": "barbaracle-mega",
+        "displayName": "Mega Barbaracle",
+        "types": [
+          "rock",
+          "fighting"
+        ],
+        "sprite": "/sprites/689-mega.png"
+      }
+    ],
+    "starmie": [
+      {
+        "variant": null,
+        "name": "starmie-mega",
+        "displayName": "Mega Starmie",
+        "types": [
+          "water",
+          "psychic"
+        ],
+        "sprite": "/sprites/121-mega.png"
+      }
+    ],
+    "floette": [
+      {
+        "variant": null,
+        "name": "floette-mega",
+        "displayName": "Mega Floette",
+        "types": [
+          "fairy"
+        ],
+        "sprite": "/sprites/670-mega.png"
+      }
+    ],
+    "meowstic-male": [
+      {
+        "variant": null,
+        "name": "meowstic-mega",
+        "displayName": "Mega Meowstic",
+        "types": [
+          "psychic"
+        ],
+        "sprite": "/sprites/678-mega.png"
+      }
+    ],
+    "pyroar": [
+      {
+        "variant": null,
+        "name": "pyroar-mega",
+        "displayName": "Mega Pyroar",
+        "types": [
+          "fire",
+          "normal"
+        ],
+        "sprite": "/sprites/668-mega.png"
+      }
+    ],
+    "raichu": [
+      {
+        "variant": "x",
+        "name": "raichu-mega-x",
+        "displayName": "Mega Raichu X",
+        "types": [
+          "electric"
+        ],
+        "sprite": "/sprites/26-mega-x.png"
+      },
+      {
+        "variant": "y",
+        "name": "raichu-mega-y",
+        "displayName": "Mega Raichu Y",
+        "types": [
+          "electric"
+        ],
+        "sprite": "/sprites/26-mega-y.png"
+      }
+    ],
+    "clefable": [
+      {
+        "variant": null,
+        "name": "clefable-mega",
+        "displayName": "Mega Clefable",
+        "types": [
+          "fairy",
+          "flying"
+        ],
+        "sprite": "/sprites/36-mega.png"
       }
     ],
     "alakazam": [
@@ -56,7 +182,7 @@
         "types": [
           "psychic"
         ],
-        "sprite": "/sprites/alakazam-mega.png"
+        "sprite": "/sprites/65-mega.png"
       }
     ],
     "gengar": [
@@ -68,7 +194,19 @@
           "ghost",
           "poison"
         ],
-        "sprite": "/sprites/gengar-mega.png"
+        "sprite": "/sprites/94-mega.png"
+      }
+    ],
+    "scolipede": [
+      {
+        "variant": null,
+        "name": "scolipede-mega",
+        "displayName": "Mega Scolipede",
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "sprite": "/sprites/545-mega.png"
       }
     ],
     "victreebel": [
@@ -80,7 +218,7 @@
           "grass",
           "poison"
         ],
-        "sprite": "/sprites/victreebel-mega.png"
+        "sprite": "/sprites/71-mega.png"
       }
     ],
     "medicham": [
@@ -92,7 +230,7 @@
           "fighting",
           "psychic"
         ],
-        "sprite": "/sprites/medicham-mega.png"
+        "sprite": "/sprites/308-mega.png"
       }
     ],
     "manectric": [
@@ -103,7 +241,7 @@
         "types": [
           "electric"
         ],
-        "sprite": "/sprites/manectric-mega.png"
+        "sprite": "/sprites/310-mega.png"
       }
     ],
     "gardevoir": [
@@ -115,7 +253,7 @@
           "psychic",
           "fairy"
         ],
-        "sprite": "/sprites/gardevoir-mega.png"
+        "sprite": "/sprites/282-mega.png"
       }
     ],
     "gallade": [
@@ -127,7 +265,7 @@
           "psychic",
           "fighting"
         ],
-        "sprite": "/sprites/gallade-mega.png"
+        "sprite": "/sprites/475-mega.png"
       }
     ],
     "houndoom": [
@@ -139,7 +277,7 @@
           "dark",
           "fire"
         ],
-        "sprite": "/sprites/houndoom-mega.png"
+        "sprite": "/sprites/229-mega.png"
       }
     ],
     "altaria": [
@@ -151,7 +289,7 @@
           "dragon",
           "fairy"
         ],
-        "sprite": "/sprites/altaria-mega.png"
+        "sprite": "/sprites/334-mega.png"
       }
     ],
     "audino": [
@@ -163,7 +301,7 @@
           "normal",
           "fairy"
         ],
-        "sprite": "/sprites/audino-mega.png"
+        "sprite": "/sprites/531-mega.png"
       }
     ],
     "lopunny": [
@@ -175,7 +313,7 @@
           "normal",
           "fighting"
         ],
-        "sprite": "/sprites/lopunny-mega.png"
+        "sprite": "/sprites/428-mega.png"
       }
     ],
     "banette": [
@@ -186,7 +324,7 @@
         "types": [
           "ghost"
         ],
-        "sprite": "/sprites/banette-mega.png"
+        "sprite": "/sprites/354-mega.png"
       }
     ],
     "camerupt": [
@@ -198,7 +336,19 @@
           "fire",
           "ground"
         ],
-        "sprite": "/sprites/camerupt-mega.png"
+        "sprite": "/sprites/323-mega.png"
+      }
+    ],
+    "excadrill": [
+      {
+        "variant": null,
+        "name": "excadrill-mega",
+        "displayName": "Mega Excadrill",
+        "types": [
+          "ground",
+          "steel"
+        ],
+        "sprite": "/sprites/530-mega.png"
       }
     ],
     "garchomp": [
@@ -210,7 +360,16 @@
           "dragon",
           "ground"
         ],
-        "sprite": "/sprites/garchomp-mega.png"
+        "sprite": "/sprites/445-mega.png"
+      },
+      {
+        "variant": "z",
+        "name": "garchomp-mega-z",
+        "displayName": "Mega Garchomp Z",
+        "types": [
+          "dragon"
+        ],
+        "sprite": "/sprites/445-mega-z.png"
       }
     ],
     "sableye": [
@@ -222,7 +381,7 @@
           "dark",
           "ghost"
         ],
-        "sprite": "/sprites/sableye-mega.png"
+        "sprite": "/sprites/302-mega.png"
       }
     ],
     "mawile": [
@@ -234,7 +393,7 @@
           "steel",
           "fairy"
         ],
-        "sprite": "/sprites/mawile-mega.png"
+        "sprite": "/sprites/303-mega.png"
       }
     ],
     "absol": [
@@ -245,7 +404,17 @@
         "types": [
           "dark"
         ],
-        "sprite": "/sprites/absol-mega.png"
+        "sprite": "/sprites/359-mega.png"
+      },
+      {
+        "variant": "z",
+        "name": "absol-mega-z",
+        "displayName": "Mega Absol Z",
+        "types": [
+          "dark",
+          "ghost"
+        ],
+        "sprite": "/sprites/359-mega-z.png"
       }
     ],
     "lucario": [
@@ -257,7 +426,17 @@
           "fighting",
           "steel"
         ],
-        "sprite": "/sprites/lucario-mega.png"
+        "sprite": "/sprites/448-mega.png"
+      },
+      {
+        "variant": "z",
+        "name": "lucario-mega-z",
+        "displayName": "Mega Lucario Z",
+        "types": [
+          "fighting",
+          "steel"
+        ],
+        "sprite": "/sprites/448-mega-z.png"
       }
     ],
     "slowbro": [
@@ -269,7 +448,7 @@
           "water",
           "psychic"
         ],
-        "sprite": "/sprites/slowbro-mega.png"
+        "sprite": "/sprites/80-mega.png"
       }
     ],
     "sharpedo": [
@@ -281,7 +460,18 @@
           "water",
           "dark"
         ],
-        "sprite": "/sprites/sharpedo-mega.png"
+        "sprite": "/sprites/319-mega.png"
+      }
+    ],
+    "eelektross": [
+      {
+        "variant": null,
+        "name": "eelektross-mega",
+        "displayName": "Mega Eelektross",
+        "types": [
+          "electric"
+        ],
+        "sprite": "/sprites/604-mega.png"
       }
     ],
     "dragonite": [
@@ -293,7 +483,7 @@
           "dragon",
           "flying"
         ],
-        "sprite": "/sprites/dragonite-mega.png"
+        "sprite": "/sprites/149-mega.png"
       }
     ],
     "venusaur": [
@@ -305,7 +495,7 @@
           "grass",
           "poison"
         ],
-        "sprite": "/sprites/venusaur-mega.png"
+        "sprite": "/sprites/3-mega.png"
       }
     ],
     "charizard": [
@@ -317,7 +507,7 @@
           "fire",
           "dragon"
         ],
-        "sprite": "/sprites/charizard-mega-x.png"
+        "sprite": "/sprites/6-mega-x.png"
       },
       {
         "variant": "y",
@@ -327,7 +517,7 @@
           "fire",
           "flying"
         ],
-        "sprite": "/sprites/charizard-mega-y.png"
+        "sprite": "/sprites/6-mega-y.png"
       }
     ],
     "blastoise": [
@@ -338,7 +528,31 @@
         "types": [
           "water"
         ],
-        "sprite": "/sprites/blastoise-mega.png"
+        "sprite": "/sprites/9-mega.png"
+      }
+    ],
+    "malamar": [
+      {
+        "variant": null,
+        "name": "malamar-mega",
+        "displayName": "Mega Malamar",
+        "types": [
+          "dark",
+          "psychic"
+        ],
+        "sprite": "/sprites/687-mega.png"
+      }
+    ],
+    "dragalge": [
+      {
+        "variant": null,
+        "name": "dragalge-mega",
+        "displayName": "Mega Dragalge",
+        "types": [
+          "poison",
+          "dragon"
+        ],
+        "sprite": "/sprites/691-mega.png"
       }
     ],
     "glalie": [
@@ -349,7 +563,19 @@
         "types": [
           "ice"
         ],
-        "sprite": "/sprites/glalie-mega.png"
+        "sprite": "/sprites/362-mega.png"
+      }
+    ],
+    "froslass": [
+      {
+        "variant": null,
+        "name": "froslass-mega",
+        "displayName": "Mega Froslass",
+        "types": [
+          "ice",
+          "ghost"
+        ],
+        "sprite": "/sprites/478-mega.png"
       }
     ],
     "abomasnow": [
@@ -361,7 +587,7 @@
           "grass",
           "ice"
         ],
-        "sprite": "/sprites/abomasnow-mega.png"
+        "sprite": "/sprites/460-mega.png"
       }
     ],
     "scizor": [
@@ -373,7 +599,7 @@
           "bug",
           "steel"
         ],
-        "sprite": "/sprites/scizor-mega.png"
+        "sprite": "/sprites/212-mega.png"
       }
     ],
     "pinsir": [
@@ -385,7 +611,7 @@
           "bug",
           "flying"
         ],
-        "sprite": "/sprites/pinsir-mega.png"
+        "sprite": "/sprites/127-mega.png"
       }
     ],
     "heracross": [
@@ -397,7 +623,43 @@
           "bug",
           "fighting"
         ],
-        "sprite": "/sprites/heracross-mega.png"
+        "sprite": "/sprites/214-mega.png"
+      }
+    ],
+    "hawlucha": [
+      {
+        "variant": null,
+        "name": "hawlucha-mega",
+        "displayName": "Mega Hawlucha",
+        "types": [
+          "fighting",
+          "flying"
+        ],
+        "sprite": "/sprites/701-mega.png"
+      }
+    ],
+    "scrafty": [
+      {
+        "variant": null,
+        "name": "scrafty-mega",
+        "displayName": "Mega Scrafty",
+        "types": [
+          "dark",
+          "fighting"
+        ],
+        "sprite": "/sprites/560-mega.png"
+      }
+    ],
+    "chandelure": [
+      {
+        "variant": null,
+        "name": "chandelure-mega",
+        "displayName": "Mega Chandelure",
+        "types": [
+          "ghost",
+          "fire"
+        ],
+        "sprite": "/sprites/609-mega.png"
       }
     ],
     "aerodactyl": [
@@ -409,7 +671,7 @@
           "rock",
           "flying"
         ],
-        "sprite": "/sprites/aerodactyl-mega.png"
+        "sprite": "/sprites/142-mega.png"
       }
     ],
     "steelix": [
@@ -421,7 +683,7 @@
           "steel",
           "ground"
         ],
-        "sprite": "/sprites/steelix-mega.png"
+        "sprite": "/sprites/208-mega.png"
       }
     ],
     "aggron": [
@@ -432,7 +694,7 @@
         "types": [
           "steel"
         ],
-        "sprite": "/sprites/aggron-mega.png"
+        "sprite": "/sprites/306-mega.png"
       }
     ],
     "tyranitar": [
@@ -444,7 +706,66 @@
           "rock",
           "dark"
         ],
-        "sprite": "/sprites/tyranitar-mega.png"
+        "sprite": "/sprites/248-mega.png"
+      }
+    ],
+    "greninja": [
+      {
+        "variant": null,
+        "name": "greninja-mega",
+        "displayName": "Mega Greninja",
+        "types": [
+          "water",
+          "dark"
+        ],
+        "sprite": "/sprites/658-mega.png"
+      }
+    ],
+    "falinks": [
+      {
+        "variant": null,
+        "name": "falinks-mega",
+        "displayName": "Mega Falinks",
+        "types": [
+          "fighting"
+        ],
+        "sprite": "/sprites/870-mega.png"
+      }
+    ],
+    "chesnaught": [
+      {
+        "variant": null,
+        "name": "chesnaught-mega",
+        "displayName": "Mega Chesnaught",
+        "types": [
+          "grass",
+          "fighting"
+        ],
+        "sprite": "/sprites/652-mega.png"
+      }
+    ],
+    "skarmory": [
+      {
+        "variant": null,
+        "name": "skarmory-mega",
+        "displayName": "Mega Skarmory",
+        "types": [
+          "steel",
+          "flying"
+        ],
+        "sprite": "/sprites/227-mega.png"
+      }
+    ],
+    "delphox": [
+      {
+        "variant": null,
+        "name": "delphox-mega",
+        "displayName": "Mega Delphox",
+        "types": [
+          "fire",
+          "psychic"
+        ],
+        "sprite": "/sprites/655-mega.png"
       }
     ],
     "salamence": [
@@ -456,7 +777,7 @@
           "dragon",
           "flying"
         ],
-        "sprite": "/sprites/salamence-mega.png"
+        "sprite": "/sprites/373-mega.png"
       }
     ],
     "kangaskhan": [
@@ -467,7 +788,19 @@
         "types": [
           "normal"
         ],
-        "sprite": "/sprites/kangaskhan-mega.png"
+        "sprite": "/sprites/115-mega.png"
+      }
+    ],
+    "drampa": [
+      {
+        "variant": null,
+        "name": "drampa-mega",
+        "displayName": "Mega Drampa",
+        "types": [
+          "normal",
+          "dragon"
+        ],
+        "sprite": "/sprites/780-mega.png"
       }
     ],
     "metagross": [
@@ -479,7 +812,19 @@
           "steel",
           "psychic"
         ],
-        "sprite": "/sprites/metagross-mega.png"
+        "sprite": "/sprites/376-mega.png"
+      }
+    ],
+    "zygarde-50": [
+      {
+        "variant": null,
+        "name": "zygarde-mega",
+        "displayName": "Mega Zygarde",
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "sprite": "/sprites/718-mega.png"
       }
     ],
     "diancie": [
@@ -491,7 +836,7 @@
           "rock",
           "fairy"
         ],
-        "sprite": "/sprites/diancie-mega.png"
+        "sprite": "/sprites/719-mega.png"
       }
     ],
     "mewtwo": [
@@ -503,7 +848,7 @@
           "psychic",
           "fighting"
         ],
-        "sprite": "/sprites/mewtwo-mega-x.png"
+        "sprite": "/sprites/150-mega-x.png"
       },
       {
         "variant": "y",
@@ -512,7 +857,75 @@
         "types": [
           "psychic"
         ],
-        "sprite": "/sprites/mewtwo-mega-y.png"
+        "sprite": "/sprites/150-mega-y.png"
+      }
+    ],
+    "scovillain": [
+      {
+        "variant": null,
+        "name": "scovillain-mega",
+        "displayName": "Mega Scovillain",
+        "types": [
+          "grass",
+          "fire"
+        ],
+        "sprite": "/sprites/952-mega.png"
+      }
+    ],
+    "glimmora": [
+      {
+        "variant": null,
+        "name": "glimmora-mega",
+        "displayName": "Mega Glimmora",
+        "types": [
+          "rock",
+          "poison"
+        ],
+        "sprite": "/sprites/970-mega.png"
+      }
+    ],
+    "tatsugiri-curly": [
+      {
+        "variant": null,
+        "name": "tatsugiri-curly-mega",
+        "displayName": "Mega Tatsugiri",
+        "types": [
+          "dragon",
+          "water"
+        ],
+        "sprite": "/sprites/978-mega.png"
+      },
+      {
+        "variant": null,
+        "name": "tatsugiri-droopy-mega",
+        "displayName": "Mega Tatsugiri",
+        "types": [
+          "dragon",
+          "water"
+        ],
+        "sprite": "/sprites/978-mega.png"
+      },
+      {
+        "variant": null,
+        "name": "tatsugiri-stretchy-mega",
+        "displayName": "Mega Tatsugiri",
+        "types": [
+          "dragon",
+          "water"
+        ],
+        "sprite": "/sprites/978-mega.png"
+      }
+    ],
+    "baxcalibur": [
+      {
+        "variant": null,
+        "name": "baxcalibur-mega",
+        "displayName": "Mega Baxcalibur",
+        "types": [
+          "dragon",
+          "ice"
+        ],
+        "sprite": "/sprites/998-mega.png"
       }
     ],
     "sceptile": [
@@ -524,7 +937,7 @@
           "grass",
           "dragon"
         ],
-        "sprite": "/sprites/sceptile-mega.png"
+        "sprite": "/sprites/254-mega.png"
       }
     ],
     "blaziken": [
@@ -536,7 +949,7 @@
           "fire",
           "fighting"
         ],
-        "sprite": "/sprites/blaziken-mega.png"
+        "sprite": "/sprites/257-mega.png"
       }
     ],
     "swampert": [
@@ -548,7 +961,90 @@
           "water",
           "ground"
         ],
-        "sprite": "/sprites/swampert-mega.png"
+        "sprite": "/sprites/260-mega.png"
+      }
+    ],
+    "chimecho": [
+      {
+        "variant": null,
+        "name": "chimecho-mega",
+        "displayName": "Mega Chimecho",
+        "types": [
+          "psychic",
+          "steel"
+        ],
+        "sprite": "/sprites/358-mega.png"
+      }
+    ],
+    "golisopod": [
+      {
+        "variant": null,
+        "name": "golisopod-mega",
+        "displayName": "Mega Golisopod",
+        "types": [
+          "bug",
+          "steel"
+        ],
+        "sprite": "/sprites/768-mega.png"
+      }
+    ],
+    "golurk": [
+      {
+        "variant": null,
+        "name": "golurk-mega",
+        "displayName": "Mega Golurk",
+        "types": [
+          "ground",
+          "ghost"
+        ],
+        "sprite": "/sprites/623-mega.png"
+      }
+    ],
+    "staraptor": [
+      {
+        "variant": null,
+        "name": "staraptor-mega",
+        "displayName": "Mega Staraptor",
+        "types": [
+          "fighting",
+          "flying"
+        ],
+        "sprite": "/sprites/398-mega.png"
+      }
+    ],
+    "crabominable": [
+      {
+        "variant": null,
+        "name": "crabominable-mega",
+        "displayName": "Mega Crabominable",
+        "types": [
+          "fighting",
+          "ice"
+        ],
+        "sprite": "/sprites/740-mega.png"
+      }
+    ],
+    "heatran": [
+      {
+        "variant": null,
+        "name": "heatran-mega",
+        "displayName": "Mega Heatran",
+        "types": [
+          "fire",
+          "steel"
+        ],
+        "sprite": "/sprites/485-mega.png"
+      }
+    ],
+    "darkrai": [
+      {
+        "variant": null,
+        "name": "darkrai-mega",
+        "displayName": "Mega Darkrai",
+        "types": [
+          "dark"
+        ],
+        "sprite": "/sprites/491-mega.png"
       }
     ],
     "latias": [
@@ -560,7 +1056,7 @@
           "dragon",
           "psychic"
         ],
-        "sprite": "/sprites/latias-mega.png"
+        "sprite": "/sprites/380-mega.png"
       }
     ],
     "latios": [
@@ -572,7 +1068,7 @@
           "dragon",
           "psychic"
         ],
-        "sprite": "/sprites/latios-mega.png"
+        "sprite": "/sprites/381-mega.png"
       }
     ],
     "rayquaza": [
@@ -584,7 +1080,40 @@
           "dragon",
           "flying"
         ],
-        "sprite": "/sprites/rayquaza-mega.png"
+        "sprite": "/sprites/384-mega.png"
+      }
+    ],
+    "magearna": [
+      {
+        "variant": null,
+        "name": "magearna-mega",
+        "displayName": "Mega Magearna",
+        "types": [
+          "steel",
+          "fairy"
+        ],
+        "sprite": "/sprites/801-mega.png"
+      },
+      {
+        "variant": null,
+        "name": "magearna-original-mega",
+        "displayName": "Mega Magearna",
+        "types": [
+          "steel",
+          "fairy"
+        ],
+        "sprite": "/sprites/801-mega.png"
+      }
+    ],
+    "zeraora": [
+      {
+        "variant": null,
+        "name": "zeraora-mega",
+        "displayName": "Mega Zeraora",
+        "types": [
+          "electric"
+        ],
+        "sprite": "/sprites/807-mega.png"
       }
     ]
   }
