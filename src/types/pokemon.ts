@@ -19,6 +19,7 @@ export type PokemonType =
   | 'fairy';
 
 export interface MegaEvolution {
+  variant: string | null;
   name: string;
   displayName: string;
   types: PokemonType[];
@@ -39,7 +40,14 @@ export interface TeamSlot {
   isMega: boolean;
 }
 
-export type Team = (TeamSlot | null)[];
+export type Team = [
+  TeamSlot | null,
+  TeamSlot | null,
+  TeamSlot | null,
+  TeamSlot | null,
+  TeamSlot | null,
+  TeamSlot | null
+];
 
 export interface TypeEffectiveness {
   attacking: PokemonType;

@@ -14,11 +14,5 @@
 }
 
 body {
-  @apply bg-gray-100 text-gray-900 min-h-screen;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-gray-900 text-gray-100;
-  }
+  @apply min-h-screen;
 }
