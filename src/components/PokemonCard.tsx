@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Pokemon, PokemonType } from '../types/pokemon';
 import { TypeBadge } from './TypeBadge';
 
@@ -9,7 +10,7 @@ interface PokemonCardProps {
   disabled?: boolean;
 }
 
-export function PokemonCard({
+export const PokemonCard = memo(function PokemonCard({
   pokemon,
   onClick,
   isSelected = false,
@@ -18,12 +19,22 @@ export function PokemonCard({
 }: PokemonCardProps) {
   const hasWarning = warningTypes.length > 0;
 
+  const statusLabel = isSelected
+    ? 'Selected'
+    : hasWarning
+      ? `Warning: adds weakness to ${warningTypes.join(', ')}`
+      : '';
+
   return (
     <button
       onClick={onClick}
       disabled={disabled}
+      role="listitem"
+      aria-pressed={isSelected}
+      aria-label={`${pokemon.displayName}, ${pokemon.types.join(' and ')} type${statusLabel ? `. ${statusLabel}` : ''}`}
       className={`
-        relative flex flex-col items-center p-2 rounded-lg border-2 transition-all
+        relative flex flex-col items-center p-1.5 sm:p-2 rounded-lg border-2 transition-all
+        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1
         ${isSelected
           ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30'
           : hasWarning
@@ -37,31 +48,32 @@ export function PokemonCard({
       `}
     >
       {hasWarning && (
-        <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+        <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-1.5 py-0.5 rounded-full" aria-hidden="true">
           !
         </div>
       )}
 
       {pokemon.megas?.length && (
-        <div className="absolute -top-2 -left-2 bg-purple-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+        <div className="absolute -top-2 -left-2 bg-purple-500 text-white text-xs px-1.5 py-0.5 rounded-full" aria-label="Has Mega Evolution">
           M
         </div>
       )}
 
       <img
         src={pokemon.sprite}
-        alt={pokemon.displayName}
-        className="w-16 h-16 object-contain"
+        alt=""
+        aria-hidden="true"
+        className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
         loading="lazy"
       />
 
-      <span className="text-sm font-medium mt-1 text-center leading-tight">
+      <span className="text-xs sm:text-sm font-medium mt-1 text-center leading-tight">
         {pokemon.displayName}
       </span>
 
-      <div className="flex gap-1 mt-1 flex-wrap justify-center">
+      <div className="flex gap-0.5 sm:gap-1 mt-1 flex-wrap justify-center" aria-hidden="true">
         {pokemon.types.map((type) => (
-          <TypeBadge key={type} type={type} size="sm" />
+          <TypeBadge key={type} type={type} size="xs" />
         ))}
       </div>
 
@@ -80,4 +92,4 @@ export function PokemonCard({
       )}
     </button>
   );
-}
+});

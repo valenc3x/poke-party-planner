@@ -14,8 +14,11 @@ export function WeaknessChart({
 }: WeaknessChartProps) {
   if (weaknessAnalysis.length === 0) {
     return (
-      <div className="text-gray-500 dark:text-gray-400 text-center py-4">
-        Add Pokemon to your team to see weakness analysis.
+      <div className="text-center py-6 sm:py-8">
+        <div className="text-3xl sm:text-4xl mb-2" aria-hidden="true">📊</div>
+        <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
+          Add Pokemon to your team to see weakness analysis.
+        </p>
       </div>
     );
   }

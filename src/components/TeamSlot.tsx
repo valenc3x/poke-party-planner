@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { TeamSlot as TeamSlotType, PokemonType } from '../types/pokemon';
 import { TypeBadge } from './TypeBadge';
 
@@ -9,7 +10,7 @@ interface TeamSlotProps {
   compact?: boolean;
 }
 
-export function TeamSlot({
+export const TeamSlot = memo(function TeamSlot({
   slot,
   index,
   onRemove,
@@ -20,11 +21,13 @@ export function TeamSlot({
     return (
       <div
         className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 transition-all duration-200 ${
-          compact ? 'p-2 min-h-[80px]' : 'p-4 min-h-[200px]'
+          compact ? 'p-1.5 sm:p-2 min-h-[70px] sm:min-h-[80px]' : 'p-3 sm:p-4 min-h-[160px] sm:min-h-[200px]'
         }`}
+        role="listitem"
+        aria-label={`Team slot ${index + 1}, empty`}
       >
         <span
-          className={`text-gray-400 dark:text-gray-500 ${compact ? 'text-xs' : 'text-sm'}`}
+          className={`text-gray-400 dark:text-gray-500 ${compact ? 'text-[10px] sm:text-xs' : 'text-xs sm:text-sm'}`}
         >
           Slot {index + 1}
         </span>
@@ -47,37 +50,41 @@ export function TeamSlot({
   return (
     <div
       className={`relative flex flex-col items-center rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-200 ${
-        compact ? 'p-1.5 min-h-[80px]' : 'p-4 min-h-[200px]'
+        compact ? 'p-1 sm:p-1.5 min-h-[70px] sm:min-h-[80px]' : 'p-3 sm:p-4 min-h-[160px] sm:min-h-[200px]'
       }`}
+      role="listitem"
+      aria-label={`${currentName}, ${currentTypes.join(' and ')} type${isMega ? ', Mega form active' : ''}`}
     >
       <button
         onClick={onRemove}
-        className={`absolute bg-red-500 text-white rounded-full font-bold hover:bg-red-600 transition-colors ${
+        className={`absolute bg-red-500 text-white rounded-full font-bold hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 ${
           compact
             ? '-top-1.5 -right-1.5 w-5 h-5 text-xs'
-            : '-top-2.5 -right-2.5 w-7 h-7 text-base'
+            : '-top-2 sm:-top-2.5 -right-2 sm:-right-2.5 w-6 sm:w-7 h-6 sm:h-7 text-sm sm:text-base'
         }`}
-        title="Remove from team"
+        aria-label={`Remove ${pokemon.displayName} from team`}
       >
-        ×
+        <span aria-hidden="true">×</span>
       </button>
 
       <img
         src={currentSprite}
-        alt={currentName}
-        className={`object-contain transition-all duration-200 ${compact ? 'w-10 h-10' : 'w-24 h-24'}`}
+        alt=""
+        aria-hidden="true"
+        className={`object-contain transition-all duration-200 ${compact ? 'w-8 h-8 sm:w-10 sm:h-10' : 'w-16 h-16 sm:w-24 sm:h-24'}`}
       />
 
       <span
         className={`font-medium text-center leading-tight ${
-          compact ? 'text-xs mt-0.5' : 'text-base mt-2'
+          compact ? 'text-[10px] sm:text-xs mt-0.5' : 'text-sm sm:text-base mt-1 sm:mt-2'
         }`}
       >
         {compact ? pokemon.displayName.split(' ')[0] : currentName}
       </span>
 
       <div
-        className={`flex flex-wrap justify-center ${compact ? 'gap-0.5 mt-0.5' : 'gap-1 mt-2'}`}
+        className={`flex flex-wrap justify-center ${compact ? 'gap-0.5 mt-0.5' : 'gap-0.5 sm:gap-1 mt-1 sm:mt-2'}`}
+        aria-hidden="true"
       >
         {currentTypes.map((type) => (
           <TypeBadge key={type} type={type} size={compact ? 'xs' : 'sm'} />
@@ -87,22 +94,24 @@ export function TeamSlot({
       {hasMega && (
         <button
           onClick={onToggleMega}
-          className={`rounded transition-all ${
-            compact ? 'mt-1 p-0.5' : 'mt-3 p-1.5'
+          className={`rounded transition-all focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 ${
+            compact ? 'mt-0.5 sm:mt-1 p-0.5' : 'mt-2 sm:mt-3 p-1 sm:p-1.5'
           } ${
             isMega
               ? 'bg-purple-500 hover:bg-purple-600 ring-2 ring-purple-300'
               : 'bg-gray-200 dark:bg-gray-700 hover:bg-purple-100 dark:hover:bg-purple-900 opacity-50 hover:opacity-100'
           }`}
-          title={isMega ? 'Disable Mega Evolution' : 'Enable Mega Evolution'}
+          aria-label={isMega ? `Disable Mega Evolution for ${pokemon.displayName}` : `Enable Mega Evolution for ${pokemon.displayName}`}
+          aria-pressed={isMega}
         >
           <img
             src="/mega-icon.png"
-            alt="Mega"
-            className={`${compact ? 'w-4 h-4' : 'w-6 h-6'} ${isMega ? '' : 'grayscale'}`}
+            alt=""
+            aria-hidden="true"
+            className={`${compact ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-5 h-5 sm:w-6 sm:h-6'} ${isMega ? '' : 'grayscale'}`}
           />
         </button>
       )}
     </div>
   );
-}
+});

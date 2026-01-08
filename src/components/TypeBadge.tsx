@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { PokemonType } from '../types/pokemon';
 
 const TYPE_COLORS: Record<PokemonType, string> = {
@@ -28,7 +29,7 @@ interface TypeBadgeProps {
   className?: string;
 }
 
-export function TypeBadge({
+export const TypeBadge = memo(function TypeBadge({
   type,
   size = 'md',
   variant = 'default',
@@ -58,4 +59,4 @@ export function TypeBadge({
       {type}
     </span>
   );
-}
+});

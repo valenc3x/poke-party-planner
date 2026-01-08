@@ -67,25 +67,35 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-      <header className="bg-red-600 text-white py-4 shadow-lg">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-white focus:text-red-600 focus:rounded-lg focus:font-semibold"
+      >
+        Skip to main content
+      </a>
+
+      <header className="bg-red-600 text-white py-3 sm:py-4 shadow-lg">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold">Poke Party Planner</h1>
-            <p className="text-red-100">Pokemon Legends Z-A Team Builder</p>
+            <h1 className="text-xl sm:text-2xl font-bold">Poke Party Planner</h1>
+            <p className="text-red-100 text-sm sm:text-base hidden xs:block">Pokemon Legends Z-A Team Builder</p>
           </div>
           {hasTeamMembers && (
             <div className="relative">
               <button
                 onClick={handleShare}
-                className="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-red-50 transition-colors"
+                className="bg-white text-red-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-semibold hover:bg-red-50 transition-colors text-sm sm:text-base"
+                aria-label="Share team link"
               >
                 Share Team
               </button>
-              {copyFeedback && (
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm bg-gray-800 text-white px-2 py-1 rounded whitespace-nowrap">
-                  {copyFeedback}
-                </span>
-              )}
+              <span
+                role="status"
+                aria-live="polite"
+                className={`absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm bg-gray-800 text-white px-2 py-1 rounded whitespace-nowrap transition-opacity ${copyFeedback ? 'opacity-100' : 'opacity-0'}`}
+              >
+                {copyFeedback || ''}
+              </span>
             </div>
           )}
         </div>
@@ -115,15 +125,18 @@ function App() {
         </div>
       </div>
 
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <main id="main-content" className="container mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
         {hasTeamMembers && (
           <section>
             <button
               onClick={() => setShowAnalysis(!showAnalysis)}
-              className="flex items-center gap-2 text-lg font-semibold mb-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              className="flex items-center gap-2 text-base sm:text-lg font-semibold mb-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+              aria-expanded={showAnalysis}
+              aria-controls="type-analysis-content"
             >
               <span
                 className={`transform transition-transform ${showAnalysis ? 'rotate-90' : ''}`}
+                aria-hidden="true"
               >
                 ▶
               </span>
@@ -131,9 +144,9 @@ function App() {
             </button>
 
             {showAnalysis && (
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-                  <h3 className="text-base font-semibold mb-4">Type Coverage</h3>
+              <div id="type-analysis-content" className="grid gap-4 sm:gap-6 md:grid-cols-2">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4">
+                  <h3 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Type Coverage</h3>
                   <TypeCoverage
                     offensiveCoverage={offensiveCoverage}
                     offensiveGaps={offensiveGaps}
@@ -142,8 +155,8 @@ function App() {
                   />
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-                  <h3 className="text-base font-semibold mb-4">Weakness Analysis</h3>
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-3 sm:p-4">
+                  <h3 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Weakness Analysis</h3>
                   <WeaknessChart
                     weaknessAnalysis={weaknessAnalysis}
                     criticalWeaknesses={criticalWeaknesses}
@@ -155,8 +168,8 @@ function App() {
           </section>
         )}
 
-        <section>
-          <h2 className="text-lg font-semibold mb-4">Pokedex</h2>
+        <section aria-labelledby="pokedex-heading">
+          <h2 id="pokedex-heading" className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Pokedex</h2>
           <PokedexGrid
             pokemon={allPokemon}
             selectedIds={selectedIds}
