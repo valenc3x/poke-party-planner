@@ -6,6 +6,7 @@ interface TeamBuilderProps {
   onRemove: (index: number) => void;
   onToggleMega: (index: number) => void;
   onClear: () => void;
+  compact?: boolean;
 }
 
 export function TeamBuilder({
@@ -13,13 +14,14 @@ export function TeamBuilder({
   onRemove,
   onToggleMega,
   onClear,
+  compact = false,
 }: TeamBuilderProps) {
   const filledSlots = team.filter((slot) => slot !== null).length;
 
   return (
-    <div className="space-y-4">
+    <div className={compact ? 'space-y-2' : 'space-y-4'}>
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold">
+        <h2 className={`font-semibold ${compact ? 'text-base' : 'text-lg'}`}>
           Your Team ({filledSlots}/6)
         </h2>
         {filledSlots > 0 && (
@@ -32,7 +34,7 @@ export function TeamBuilder({
         )}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
         {team.map((slot, index) => (
           <TeamSlot
             key={index}
@@ -40,11 +42,12 @@ export function TeamBuilder({
             index={index}
             onRemove={() => onRemove(index)}
             onToggleMega={() => onToggleMega(index)}
+            compact={compact}
           />
         ))}
       </div>
 
-      {filledSlots === 0 && (
+      {!compact && filledSlots === 0 && (
         <p className="text-center text-gray-500 dark:text-gray-400 text-sm">
           Select Pokemon from the Pokedex below to build your team
         </p>

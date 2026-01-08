@@ -68,3 +68,5 @@ export interface WeaknessAnalysis {
   count: number;
   pokemonNames: string[];
 }
+
+export const EMPTY_TEAM: Team = [null, null, null, null, null, null];

@@ -1,4 +1,5 @@
 import type { Team, TeamSlot, Pokemon } from '../types/pokemon';
+import { hydrateSlot, type SerializedSlot } from './teamHydration';
 
 const TEAM_PARAM = 'team';
 
@@ -7,12 +8,6 @@ const TEAM_PARAM = 'team';
  * Empty slots are represented as "0"
  * Full team example: "25.0.0-6.1.0-9.0.0-0-0-0"
  */
-
-interface SerializedSlot {
-  pokemonId: number;
-  isMega: boolean;
-  megaIndex: number;
-}
 
 function encodeSlot(slot: TeamSlot | null): string {
   if (!slot) return '0';
@@ -54,19 +49,7 @@ export function decodeTeamFromUrl(
     const decoded = decodeSlot(part);
     if (!decoded) continue;
 
-    const pokemon = pokemonLookup.get(decoded.pokemonId);
-    if (!pokemon) continue;
-
-    // Validate mega settings
-    const hasMegas = pokemon.megas && pokemon.megas.length > 0;
-    const validMegaIndex =
-      hasMegas && decoded.megaIndex < (pokemon.megas?.length ?? 0);
-
-    team[i] = {
-      pokemon,
-      isMega: Boolean(hasMegas && decoded.isMega),
-      megaIndex: validMegaIndex ? decoded.megaIndex : 0,
-    };
+    team[i] = hydrateSlot(decoded, pokemonLookup);
   }
 
   return team;

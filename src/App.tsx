@@ -28,6 +28,7 @@ function App() {
   } = useTeam(pokemonLookup);
 
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
+  const [showAnalysis, setShowAnalysis] = useState(true);
 
   const {
     offensiveCoverage,
@@ -73,36 +74,56 @@ function App() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 space-y-8">
-        <section>
+      {/* Sticky team section */}
+      <div className="sticky top-0 z-10 bg-gray-100 dark:bg-gray-900 shadow-md">
+        <div className="container mx-auto px-4 py-3">
           <TeamBuilder
             team={team}
             onRemove={removePokemon}
             onToggleMega={toggleMega}
             onClear={clearTeam}
+            compact
           />
-        </section>
+        </div>
+      </div>
 
+      <main className="container mx-auto px-4 py-8 space-y-8">
         {hasTeamMembers && (
-          <section className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-              <h2 className="text-lg font-semibold mb-4">Type Coverage</h2>
-              <TypeCoverage
-                offensiveCoverage={offensiveCoverage}
-                offensiveGaps={offensiveGaps}
-                teamResistances={teamResistances}
-                teamImmunities={teamImmunities}
-              />
-            </div>
+          <section>
+            <button
+              onClick={() => setShowAnalysis(!showAnalysis)}
+              className="flex items-center gap-2 text-lg font-semibold mb-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            >
+              <span
+                className={`transform transition-transform ${showAnalysis ? 'rotate-90' : ''}`}
+              >
+                ▶
+              </span>
+              Type Analysis
+            </button>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-              <h2 className="text-lg font-semibold mb-4">Weakness Analysis</h2>
-              <WeaknessChart
-                weaknessAnalysis={weaknessAnalysis}
-                criticalWeaknesses={criticalWeaknesses}
-                stackedWeaknesses={stackedWeaknesses}
-              />
-            </div>
+            {showAnalysis && (
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                  <h3 className="text-base font-semibold mb-4">Type Coverage</h3>
+                  <TypeCoverage
+                    offensiveCoverage={offensiveCoverage}
+                    offensiveGaps={offensiveGaps}
+                    teamResistances={teamResistances}
+                    teamImmunities={teamImmunities}
+                  />
+                </div>
+
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                  <h3 className="text-base font-semibold mb-4">Weakness Analysis</h3>
+                  <WeaknessChart
+                    weaknessAnalysis={weaknessAnalysis}
+                    criticalWeaknesses={criticalWeaknesses}
+                    stackedWeaknesses={stackedWeaknesses}
+                  />
+                </div>
+              </div>
+            )}
           </section>
         )}
 

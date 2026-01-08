@@ -34,7 +34,7 @@ export function PokedexGrid({
 
   const getPokemonWarnings = (p: Pokemon): PokemonType[] => {
     if (selectedIds.has(p.id)) return [];
-    return getStackedWeaknesses(teamWeaknessCounts, p.types, 2);
+    return getStackedWeaknesses(teamWeaknessCounts, p.types, 3);
   };
 
   const isTeamFull = selectedIds.size >= maxTeamSize;

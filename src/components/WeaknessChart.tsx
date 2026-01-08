@@ -29,7 +29,7 @@ export function WeaknessChart({
             Critical Weaknesses
           </h3>
           <p className="text-sm text-red-600 dark:text-red-400 mb-3">
-            3 or more team members share these weaknesses:
+            4 or more team members share these weaknesses:
           </p>
           <div className="space-y-2">
             {criticalWeaknesses.map((weakness) => (
@@ -46,7 +46,7 @@ export function WeaknessChart({
             Stacked Weaknesses
           </h3>
           <p className="text-sm text-orange-600 dark:text-orange-400 mb-3">
-            2 team members share these weaknesses:
+            3 team members share these weaknesses:
           </p>
           <div className="space-y-2">
             {stackedWeaknesses.map((weakness) => (
@@ -66,9 +66,9 @@ export function WeaknessChart({
               key={weakness.type}
               weakness={weakness}
               severity={
-                weakness.count >= 3
+                weakness.count >= 4
                   ? 'critical'
-                  : weakness.count === 2
+                  : weakness.count === 3
                     ? 'warning'
                     : 'normal'
               }

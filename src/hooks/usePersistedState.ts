@@ -1,13 +1,15 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import type { Team, Pokemon } from '../types/pokemon';
+import { EMPTY_TEAM } from '../types/pokemon';
+import { hydrateSlot, type SerializedSlot } from '../utils/teamHydration';
 import {
   getTeamFromUrl,
   setTeamInUrl,
   getShareUrl,
 } from '../utils/urlState';
+import { debounce } from '../utils/debounce';
 
 const STORAGE_KEY = 'poke-party-planner-team';
-const EMPTY_TEAM: Team = [null, null, null, null, null, null];
 
 function serializeTeamForStorage(team: Team): string {
   return JSON.stringify(
@@ -23,18 +25,12 @@ function serializeTeamForStorage(team: Team): string {
   );
 }
 
-interface StoredSlot {
-  pokemonId: number;
-  isMega: boolean;
-  megaIndex: number;
-}
-
 function deserializeTeamFromStorage(
   stored: string,
   pokemonLookup: Map<number, Pokemon>
 ): Team | null {
   try {
-    const parsed = JSON.parse(stored) as (StoredSlot | null)[];
+    const parsed = JSON.parse(stored) as (SerializedSlot | null)[];
     if (!Array.isArray(parsed) || parsed.length !== 6) return null;
 
     const team: Team = [null, null, null, null, null, null];
@@ -42,19 +38,7 @@ function deserializeTeamFromStorage(
     for (let i = 0; i < 6; i++) {
       const slot = parsed[i];
       if (!slot) continue;
-
-      const pokemon = pokemonLookup.get(slot.pokemonId);
-      if (!pokemon) continue;
-
-      const hasMegas = pokemon.megas && pokemon.megas.length > 0;
-      const validMegaIndex =
-        hasMegas && slot.megaIndex < (pokemon.megas?.length ?? 0);
-
-      team[i] = {
-        pokemon,
-        isMega: Boolean(hasMegas && slot.isMega),
-        megaIndex: validMegaIndex ? slot.megaIndex : 0,
-      };
+      team[i] = hydrateSlot(slot, pokemonLookup);
     }
 
     return team;
@@ -97,31 +81,29 @@ export interface UsePersistedTeamReturn {
 export function usePersistedTeam(
   pokemonLookup: Map<number, Pokemon>
 ): UsePersistedTeamReturn {
-  const [team, setTeamState] = useState<Team>(() =>
+  const [team, setTeam] = useState<Team>(() =>
     getInitialTeam(pokemonLookup)
   );
 
+  // Create debounced URL updater (stable reference)
+  const debouncedSetTeamInUrl = useRef(
+    debounce((t: Team) => setTeamInUrl(t), 300)
+  ).current;
+
   // Sync to LocalStorage and URL on team changes
   useEffect(() => {
-    // Save to LocalStorage
+    // Save to LocalStorage immediately
     try {
       localStorage.setItem(STORAGE_KEY, serializeTeamForStorage(team));
     } catch {
       // LocalStorage not available
     }
 
-    // Update URL
-    setTeamInUrl(team);
-  }, [team]);
+    // Debounce URL updates to avoid excessive history state changes
+    debouncedSetTeamInUrl(team);
+  }, [team, debouncedSetTeamInUrl]);
 
-  const setTeam = useCallback(
-    (newTeam: Team | ((prev: Team) => Team)) => {
-      setTeamState(newTeam);
-    },
-    []
-  );
-
-  const shareUrl = getShareUrl(team);
+  const shareUrl = useMemo(() => getShareUrl(team), [team]);
 
   const copyShareUrl = useCallback(async (): Promise<boolean> => {
     try {

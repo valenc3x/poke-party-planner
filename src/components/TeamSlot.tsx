@@ -6,18 +6,33 @@ interface TeamSlotProps {
   index: number;
   onRemove: () => void;
   onToggleMega: () => void;
+  compact?: boolean;
 }
 
-export function TeamSlot({ slot, index, onRemove, onToggleMega }: TeamSlotProps) {
+export function TeamSlot({
+  slot,
+  index,
+  onRemove,
+  onToggleMega,
+  compact = false,
+}: TeamSlotProps) {
   if (!slot) {
     return (
-      <div className="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 min-h-[140px]">
-        <span className="text-gray-400 dark:text-gray-500 text-sm">
+      <div
+        className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 ${
+          compact ? 'p-2 min-h-[80px]' : 'p-3 min-h-[140px]'
+        }`}
+      >
+        <span
+          className={`text-gray-400 dark:text-gray-500 ${compact ? 'text-xs' : 'text-sm'}`}
+        >
           Slot {index + 1}
         </span>
-        <span className="text-gray-300 dark:text-gray-600 text-xs mt-1">
-          Empty
-        </span>
+        {!compact && (
+          <span className="text-gray-300 dark:text-gray-600 text-xs mt-1">
+            Empty
+          </span>
+        )}
       </div>
     );
   }
@@ -30,10 +45,18 @@ export function TeamSlot({ slot, index, onRemove, onToggleMega }: TeamSlotProps)
   const currentName = isMega && mega ? mega.displayName : pokemon.displayName;
 
   return (
-    <div className="relative flex flex-col items-center p-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 min-h-[140px]">
+    <div
+      className={`relative flex flex-col items-center rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 ${
+        compact ? 'p-1.5 min-h-[80px]' : 'p-3 min-h-[140px]'
+      }`}
+    >
       <button
         onClick={onRemove}
-        className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full text-sm font-bold hover:bg-red-600 transition-colors"
+        className={`absolute bg-red-500 text-white rounded-full font-bold hover:bg-red-600 transition-colors ${
+          compact
+            ? '-top-1.5 -right-1.5 w-5 h-5 text-xs'
+            : '-top-2 -right-2 w-6 h-6 text-sm'
+        }`}
         title="Remove from team"
       >
         ×
@@ -42,31 +65,37 @@ export function TeamSlot({ slot, index, onRemove, onToggleMega }: TeamSlotProps)
       <img
         src={currentSprite}
         alt={currentName}
-        className="w-16 h-16 object-contain"
+        className={`object-contain ${compact ? 'w-10 h-10' : 'w-16 h-16'}`}
       />
 
-      <span className="text-sm font-medium mt-1 text-center leading-tight">
-        {currentName}
+      <span
+        className={`font-medium text-center leading-tight ${
+          compact ? 'text-xs mt-0.5' : 'text-sm mt-1'
+        }`}
+      >
+        {compact ? pokemon.displayName.split(' ')[0] : currentName}
       </span>
 
-      <div className="flex gap-1 mt-1 flex-wrap justify-center">
+      <div
+        className={`flex gap-0.5 flex-wrap justify-center ${compact ? 'mt-0.5' : 'mt-1'}`}
+      >
         {currentTypes.map((type) => (
-          <TypeBadge key={type} type={type} size="sm" />
+          <TypeBadge key={type} type={type} size="xs" />
         ))}
       </div>
 
       {hasMega && (
         <button
           onClick={onToggleMega}
-          className={`
-            mt-2 px-2 py-0.5 text-xs font-medium rounded transition-colors
-            ${isMega
+          className={`font-medium rounded transition-colors ${
+            compact ? 'mt-1 px-1.5 py-0.5 text-[10px]' : 'mt-2 px-2 py-0.5 text-xs'
+          } ${
+            isMega
               ? 'bg-purple-500 text-white hover:bg-purple-600'
               : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900'
-            }
-          `}
+          }`}
         >
-          {isMega ? 'Mega ✓' : 'Mega'}
+          {isMega ? 'M' : 'M'}
         </button>
       )}
     </div>

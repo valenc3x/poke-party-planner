@@ -20,9 +20,9 @@ interface TypeCoverageAnalysis {
   teamResistances: Set<PokemonType>;
   /** Types the team is immune to (at least one member) */
   teamImmunities: Set<PokemonType>;
-  /** Types where 3+ Pokemon are weak (danger zone) */
+  /** Types where 4+ Pokemon are weak (danger zone) */
   criticalWeaknesses: WeaknessAnalysis[];
-  /** Types where 2 Pokemon are weak (warning zone) */
+  /** Types where 3 Pokemon are weak (warning zone) */
   stackedWeaknesses: WeaknessAnalysis[];
 }
 
@@ -80,9 +80,9 @@ export function useTypeCoverage(team: Team): TypeCoverageAnalysis {
     }
     weaknessAnalysis.sort((a, b) => b.count - a.count || a.type.localeCompare(b.type));
 
-    // Separate critical (3+) and stacked (2) weaknesses
-    const criticalWeaknesses = weaknessAnalysis.filter((w) => w.count >= 3);
-    const stackedWeaknesses = weaknessAnalysis.filter((w) => w.count === 2);
+    // Separate critical (4+) and stacked (3) weaknesses
+    const criticalWeaknesses = weaknessAnalysis.filter((w) => w.count >= 4);
+    const stackedWeaknesses = weaknessAnalysis.filter((w) => w.count === 3);
 
     return {
       offensiveCoverage,

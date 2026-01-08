@@ -1,10 +1,9 @@
 import { useMemo, useCallback } from 'react';
 import type { Pokemon, Team, TeamSlot, PokemonType } from '../types/pokemon';
+import { EMPTY_TEAM } from '../types/pokemon';
 import { getWeaknesses } from '../utils/typeChart';
 import { getActiveTypes } from '../utils/teamUtils';
 import { usePersistedTeam } from './usePersistedState';
-
-const EMPTY_TEAM: Team = [null, null, null, null, null, null];
 
 function copyTeam(team: Team): Team {
   return [...team] as Team;
