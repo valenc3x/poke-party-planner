@@ -6,6 +6,7 @@ import { WeaknessChart } from './components/WeaknessChart';
 import { useTeam } from './hooks/useTeam';
 import { useTypeCoverage } from './hooks/useTypeCoverage';
 import { allPokemon } from './utils/loadPokemon';
+import type { PokemonType } from './types/pokemon';
 
 function App() {
   const pokemonLookup = useMemo(() => {
@@ -30,6 +31,7 @@ function App() {
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
   const [showAnalysis, setShowAnalysis] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
+  const [pokedexTypeFilter, setPokedexTypeFilter] = useState<PokemonType | null>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -152,6 +154,7 @@ function App() {
                     offensiveGaps={offensiveGaps}
                     teamResistances={teamResistances}
                     teamImmunities={teamImmunities}
+                    onTypeClick={setPokedexTypeFilter}
                   />
                 </div>
 
@@ -174,7 +177,10 @@ function App() {
             pokemon={allPokemon}
             selectedIds={selectedIds}
             teamWeaknessCounts={teamWeaknessCounts}
+            offensiveGaps={offensiveGaps}
             onSelect={togglePokemon}
+            typeFilter={pokedexTypeFilter}
+            onTypeFilterChange={setPokedexTypeFilter}
           />
         </section>
       </main>

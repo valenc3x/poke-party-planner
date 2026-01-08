@@ -2,25 +2,48 @@ import { useState, useMemo } from 'react';
 import type { Pokemon, PokemonType } from '../types/pokemon';
 import { PokemonCard } from './PokemonCard';
 import { TypeBadge } from './TypeBadge';
-import { ALL_TYPES, getStackedWeaknesses } from '../utils/typeChart';
+import { ALL_TYPES, getStackedWeaknesses, getCoverageRecommendations } from '../utils/typeChart';
 
 interface PokedexGridProps {
   pokemon: Pokemon[];
   selectedIds: Set<number>;
   teamWeaknessCounts: Map<PokemonType, number>;
+  offensiveGaps: PokemonType[];
   onSelect: (pokemon: Pokemon) => void;
   maxTeamSize?: number;
+  typeFilter?: PokemonType | null;
+  onTypeFilterChange?: (type: PokemonType | null) => void;
 }
 
 export function PokedexGrid({
   pokemon,
   selectedIds,
   teamWeaknessCounts,
+  offensiveGaps,
   onSelect,
   maxTeamSize = 6,
+  typeFilter: externalTypeFilter,
+  onTypeFilterChange,
 }: PokedexGridProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [typeFilter, setTypeFilter] = useState<PokemonType | null>(null);
+  const [internalTypeFilter, setInternalTypeFilter] = useState<PokemonType | null>(null);
+
+  // Use external filter if provided, otherwise use internal state
+  const typeFilter = externalTypeFilter !== undefined ? externalTypeFilter : internalTypeFilter;
+  const setTypeFilter = onTypeFilterChange ?? setInternalTypeFilter;
+  const [hideLowerEvolutions, setHideLowerEvolutions] = useState(false);
+  const [hideWeaknessWarnings, setHideWeaknessWarnings] = useState(false);
+  const [showMegasOnly, setShowMegasOnly] = useState(false);
+
+  const getPokemonWarnings = (p: Pokemon): PokemonType[] => {
+    if (selectedIds.has(p.id)) return [];
+    return getStackedWeaknesses(teamWeaknessCounts, p.types, 3);
+  };
+
+  const getPokemonRecommendations = (p: Pokemon): PokemonType[] => {
+    if (selectedIds.has(p.id)) return [];
+    return getCoverageRecommendations(offensiveGaps, p.types);
+  };
 
   const filteredPokemon = useMemo(() => {
     return pokemon.filter((p) => {
@@ -28,14 +51,12 @@ export function PokedexGrid({
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
       const matchesType = !typeFilter || p.types.includes(typeFilter);
-      return matchesSearch && matchesType;
+      const matchesEvolution = !hideLowerEvolutions || p.isFinalEvolution;
+      const matchesWeakness = !hideWeaknessWarnings || selectedIds.has(p.id) || getPokemonWarnings(p).length === 0;
+      const matchesMega = !showMegasOnly || (p.megas && p.megas.length > 0);
+      return matchesSearch && matchesType && matchesEvolution && matchesWeakness && matchesMega;
     });
-  }, [pokemon, searchQuery, typeFilter]);
-
-  const getPokemonWarnings = (p: Pokemon): PokemonType[] => {
-    if (selectedIds.has(p.id)) return [];
-    return getStackedWeaknesses(teamWeaknessCounts, p.types, 3);
-  };
+  }, [pokemon, searchQuery, typeFilter, hideLowerEvolutions, hideWeaknessWarnings, showMegasOnly, selectedIds, teamWeaknessCounts]);
 
   const isTeamFull = selectedIds.size >= maxTeamSize;
 
@@ -87,6 +108,36 @@ export function PokedexGrid({
         </div>
       )}
 
+      <div className="flex flex-wrap gap-x-4 gap-y-2">
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={hideLowerEvolutions}
+            onChange={(e) => setHideLowerEvolutions(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-blue-500 focus:ring-blue-500"
+          />
+          Final evolutions only
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={hideWeaknessWarnings}
+            onChange={(e) => setHideWeaknessWarnings(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-blue-500 focus:ring-blue-500"
+          />
+          Hide weakness warnings
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={showMegasOnly}
+            onChange={(e) => setShowMegasOnly(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-blue-500 focus:ring-blue-500"
+          />
+          Megas only
+        </label>
+      </div>
+
       <div className="text-sm text-gray-600 dark:text-gray-400">
         Showing {filteredPokemon.length} of {pokemon.length} Pokemon
         {isTeamFull && (
@@ -106,6 +157,7 @@ export function PokedexGrid({
             onClick={() => onSelect(p)}
             isSelected={selectedIds.has(p.id)}
             warningTypes={getPokemonWarnings(p)}
+            recommendedTypes={getPokemonRecommendations(p)}
             disabled={isTeamFull && !selectedIds.has(p.id)}
           />
         ))}

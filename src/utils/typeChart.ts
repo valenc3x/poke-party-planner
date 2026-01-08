@@ -116,3 +116,69 @@ export function getStackedWeaknesses(
 
   return stacked;
 }
+
+
+/**
+ * Get which offensive gaps a Pokemon would fill with its types.
+ * Returns the types from offensiveGaps that the Pokemon can hit super-effectively.
+ */
+export function getCoverageRecommendations(
+  offensiveGaps: PokemonType[],
+  pokemonTypes: PokemonType[]
+): PokemonType[] {
+  if (offensiveGaps.length === 0) return [];
+
+  const gapsSet = new Set(offensiveGaps);
+  const coveredGaps: PokemonType[] = [];
+
+  for (const type of pokemonTypes) {
+    const superEffective = getSuperEffectiveAgainst(type);
+    for (const hitType of superEffective) {
+      if (gapsSet.has(hitType) && !coveredGaps.includes(hitType)) {
+        coveredGaps.push(hitType);
+      }
+    }
+  }
+
+  return coveredGaps;
+}
+
+
+/**
+ * Get which attacking types are super-effective against a defending type.
+ * This is the inverse of getSuperEffectiveAgainst.
+ */
+export function getTypesEffectiveAgainst(defendingType: PokemonType): PokemonType[] {
+  const effectiveTypes: PokemonType[] = [];
+
+  for (const attackType of ALL_TYPES) {
+    if (getTypeEffectiveness(attackType, defendingType) === 2) {
+      effectiveTypes.push(attackType);
+    }
+  }
+
+  return effectiveTypes;
+}
+
+/**
+ * Get recommended Pokemon types that would fill coverage gaps.
+ * Returns a map of Pokemon type to the gap types it would cover.
+ */
+export function getRecommendedTypesForGaps(
+  offensiveGaps: PokemonType[]
+): Map<PokemonType, PokemonType[]> {
+  const recommendations = new Map<PokemonType, PokemonType[]>();
+
+  for (const gapType of offensiveGaps) {
+    const effectiveTypes = getTypesEffectiveAgainst(gapType);
+    for (const type of effectiveTypes) {
+      const existing = recommendations.get(type) ?? [];
+      if (!existing.includes(gapType)) {
+        existing.push(gapType);
+      }
+      recommendations.set(type, existing);
+    }
+  }
+
+  return recommendations;
+}
