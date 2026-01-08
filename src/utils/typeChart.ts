@@ -107,7 +107,7 @@ export function getStackedWeaknesses(
   const newWeaknesses = getWeaknesses(newPokemonTypes);
   const stacked: PokemonType[] = [];
 
-  for (const [type, _multiplier] of newWeaknesses) {
+  for (const type of newWeaknesses.keys()) {
     const existingCount = existingWeaknessCounts.get(type) ?? 0;
     if (existingCount >= threshold - 1) {
       stacked.push(type);

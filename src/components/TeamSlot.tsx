@@ -22,17 +22,12 @@ export function TeamSlot({ slot, index, onRemove, onToggleMega }: TeamSlotProps)
     );
   }
 
-  const { pokemon, isMega } = slot;
-  const hasMega = !!pokemon.mega;
-  const currentTypes: PokemonType[] = isMega && pokemon.mega
-    ? pokemon.mega.types
-    : pokemon.types;
-  const currentSprite = isMega && pokemon.mega
-    ? pokemon.mega.sprite
-    : pokemon.sprite;
-  const currentName = isMega && pokemon.mega
-    ? pokemon.mega.displayName
-    : pokemon.displayName;
+  const { pokemon, isMega, megaIndex } = slot;
+  const mega = pokemon.megas?.[megaIndex];
+  const hasMega = !!mega;
+  const currentTypes: PokemonType[] = isMega && mega ? mega.types : pokemon.types;
+  const currentSprite = isMega && mega ? mega.sprite : pokemon.sprite;
+  const currentName = isMega && mega ? mega.displayName : pokemon.displayName;
 
   return (
     <div className="relative flex flex-col items-center p-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 min-h-[140px]">

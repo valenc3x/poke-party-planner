@@ -10,7 +10,7 @@ export function loadPokemonWithMegas(): Pokemon[] {
     if (megas && megas.length > 0) {
       return {
         ...p,
-        mega: megas[0],
+        megas,
       } as Pokemon;
     }
     return p as Pokemon;

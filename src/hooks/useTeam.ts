@@ -4,6 +4,10 @@ import { getWeaknesses } from '../utils/typeChart';
 
 const EMPTY_TEAM: Team = [null, null, null, null, null, null];
 
+function copyTeam(team: Team): Team {
+  return [...team] as Team;
+}
+
 export function useTeam() {
   const [team, setTeam] = useState<Team>(EMPTY_TEAM);
 
@@ -12,8 +16,8 @@ export function useTeam() {
       const emptyIndex = current.findIndex((slot) => slot === null);
       if (emptyIndex === -1) return current;
 
-      const newTeam = [...current] as Team;
-      newTeam[emptyIndex] = { pokemon, isMega: false };
+      const newTeam = copyTeam(current);
+      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
       return newTeam;
     });
   }, []);
@@ -22,7 +26,7 @@ export function useTeam() {
     setTeam((current) => {
       if (index < 0 || index >= 6 || current[index] === null) return current;
 
-      const newTeam = [...current] as Team;
+      const newTeam = copyTeam(current);
       newTeam[index] = null;
       return newTeam;
     });
@@ -31,9 +35,9 @@ export function useTeam() {
   const toggleMega = useCallback((index: number) => {
     setTeam((current) => {
       const slot = current[index];
-      if (!slot || !slot.pokemon.mega) return current;
+      if (!slot || !slot.pokemon.megas?.length) return current;
 
-      const newTeam = [...current] as Team;
+      const newTeam = copyTeam(current);
       newTeam[index] = { ...slot, isMega: !slot.isMega };
       return newTeam;
     });
@@ -50,7 +54,7 @@ export function useTeam() {
       );
 
       if (existingIndex !== -1) {
-        const newTeam = [...current] as Team;
+        const newTeam = copyTeam(current);
         newTeam[existingIndex] = null;
         return newTeam;
       }
@@ -58,8 +62,8 @@ export function useTeam() {
       const emptyIndex = current.findIndex((slot) => slot === null);
       if (emptyIndex === -1) return current;
 
-      const newTeam = [...current] as Team;
-      newTeam[emptyIndex] = { pokemon, isMega: false };
+      const newTeam = copyTeam(current);
+      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
       return newTeam;
     });
   }, []);
@@ -78,12 +82,11 @@ export function useTeam() {
     for (const slot of team) {
       if (!slot) continue;
 
-      const types = slot.isMega && slot.pokemon.mega
-        ? slot.pokemon.mega.types
-        : slot.pokemon.types;
+      const mega = slot.pokemon.megas?.[slot.megaIndex];
+      const types = slot.isMega && mega ? mega.types : slot.pokemon.types;
 
       const weaknesses = getWeaknesses(types);
-      for (const [type] of weaknesses) {
+      for (const type of weaknesses.keys()) {
         counts.set(type, (counts.get(type) ?? 0) + 1);
       }
     }

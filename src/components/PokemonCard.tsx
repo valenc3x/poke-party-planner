@@ -42,7 +42,7 @@ export function PokemonCard({
         </div>
       )}
 
-      {pokemon.mega && (
+      {pokemon.megas?.length && (
         <div className="absolute -top-2 -left-2 bg-purple-500 text-white text-xs px-1.5 py-0.5 rounded-full">
           M
         </div>

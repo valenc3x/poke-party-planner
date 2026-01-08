@@ -32,12 +32,13 @@ export interface Pokemon {
   displayName: string;
   types: PokemonType[];
   sprite: string;
-  mega?: MegaEvolution;
+  megas?: MegaEvolution[];
 }
 
 export interface TeamSlot {
   pokemon: Pokemon;
   isMega: boolean;
+  megaIndex: number;
 }
 
 export type Team = [
