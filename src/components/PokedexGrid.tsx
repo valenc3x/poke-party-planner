@@ -32,7 +32,9 @@ export function PokedexGrid({
   const typeFilter = externalTypeFilter !== undefined ? externalTypeFilter : internalTypeFilter;
   const setTypeFilter = onTypeFilterChange ?? setInternalTypeFilter;
   const [hideLowerEvolutions, setHideLowerEvolutions] = useState(false);
-  const [hideWeaknessWarnings, setHideWeaknessWarnings] = useState(false);
+  const [hideWarnings, setHideWarnings] = useState(false);
+  const [hideRisky, setHideRisky] = useState(false);
+  const [showRecommendedOnly, setShowRecommendedOnly] = useState(false);
   const [showMegasOnly, setShowMegasOnly] = useState(false);
 
   const getPokemonWarnings = (p: Pokemon): PokemonType[] => {
@@ -52,11 +54,25 @@ export function PokedexGrid({
         .includes(searchQuery.toLowerCase());
       const matchesType = !typeFilter || p.types.includes(typeFilter);
       const matchesEvolution = !hideLowerEvolutions || p.isFinalEvolution;
-      const matchesWeakness = !hideWeaknessWarnings || selectedIds.has(p.id) || getPokemonWarnings(p).length === 0;
       const matchesMega = !showMegasOnly || (p.megas && p.megas.length > 0);
-      return matchesSearch && matchesType && matchesEvolution && matchesWeakness && matchesMega;
+
+      // Get warning and recommendation states
+      const warnings = getPokemonWarnings(p);
+      const recommendations = getPokemonRecommendations(p);
+      const hasWarning = warnings.length > 0;
+      const hasRecommendation = recommendations.length > 0;
+      const isRisky = hasWarning && hasRecommendation;
+
+      // Filter by warning state (pure warnings only, not risky)
+      const matchesWarningFilter = !hideWarnings || selectedIds.has(p.id) || !hasWarning || isRisky;
+      // Filter by risky state
+      const matchesRiskyFilter = !hideRisky || selectedIds.has(p.id) || !isRisky;
+      // Filter to show only recommended (includes risky)
+      const matchesRecommendedFilter = !showRecommendedOnly || selectedIds.has(p.id) || hasRecommendation;
+
+      return matchesSearch && matchesType && matchesEvolution && matchesMega && matchesWarningFilter && matchesRiskyFilter && matchesRecommendedFilter;
     });
-  }, [pokemon, searchQuery, typeFilter, hideLowerEvolutions, hideWeaknessWarnings, showMegasOnly, selectedIds, teamWeaknessCounts]);
+  }, [pokemon, searchQuery, typeFilter, hideLowerEvolutions, hideWarnings, hideRisky, showRecommendedOnly, showMegasOnly, selectedIds, teamWeaknessCounts, offensiveGaps]);
 
   const isTeamFull = selectedIds.size >= maxTeamSize;
 
@@ -121,20 +137,38 @@ export function PokedexGrid({
         <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
           <input
             type="checkbox"
-            checked={hideWeaknessWarnings}
-            onChange={(e) => setHideWeaknessWarnings(e.target.checked)}
-            className="rounded border-gray-300 dark:border-gray-600 text-blue-500 focus:ring-blue-500"
-          />
-          Hide weakness warnings
-        </label>
-        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
-          <input
-            type="checkbox"
             checked={showMegasOnly}
             onChange={(e) => setShowMegasOnly(e.target.checked)}
             className="rounded border-gray-300 dark:border-gray-600 text-blue-500 focus:ring-blue-500"
           />
           Megas only
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={showRecommendedOnly}
+            onChange={(e) => setShowRecommendedOnly(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-emerald-500 focus:ring-emerald-500"
+          />
+          Recommended only
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={hideWarnings}
+            onChange={(e) => setHideWarnings(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-rose-500 focus:ring-rose-500"
+          />
+          Hide warnings
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={hideRisky}
+            onChange={(e) => setHideRisky(e.target.checked)}
+            className="rounded border-gray-300 dark:border-gray-600 text-violet-500 focus:ring-violet-500"
+          />
+          Hide risky
         </label>
       </div>
 
