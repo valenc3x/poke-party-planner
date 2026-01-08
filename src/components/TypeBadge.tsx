@@ -24,21 +24,32 @@ const TYPE_COLORS: Record<PokemonType, string> = {
 interface TypeBadgeProps {
   type: PokemonType;
   size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'faded';
   className?: string;
 }
 
-export function TypeBadge({ type, size = 'md', className = '' }: TypeBadgeProps) {
+export function TypeBadge({
+  type,
+  size = 'md',
+  variant = 'default',
+  className = '',
+}: TypeBadgeProps) {
   const sizeClasses = {
     sm: 'px-1.5 py-0.5 text-xs',
     md: 'px-2 py-0.5 text-sm',
     lg: 'px-3 py-1 text-base',
   };
 
+  const variantClasses = {
+    default: TYPE_COLORS[type],
+    faded: 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 line-through',
+  };
+
   return (
     <span
       className={`
         inline-block rounded font-medium capitalize
-        ${TYPE_COLORS[type]}
+        ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${className}
       `}
