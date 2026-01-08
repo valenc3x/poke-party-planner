@@ -82,10 +82,11 @@ interface Pokemon {
   displayName: string;
   types: PokemonType[];
   sprite: string;
-  mega?: MegaEvolution;
+  megas?: MegaEvolution[];  // Array - some Pokemon have multiple megas (e.g., Charizard X/Y)
 }
 
 interface MegaEvolution {
+  variant: 'x' | 'y' | null;  // For Pokemon with X/Y mega variants
   name: string;
   displayName: string;
   types: PokemonType[];

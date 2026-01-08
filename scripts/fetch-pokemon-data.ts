@@ -34,6 +34,12 @@ interface PokeAPIPokedex {
 interface PokeAPISpecies {
   name: string;
   id: number;
+  names: Array<{
+    name: string;
+    language: {
+      name: string;
+    };
+  }>;
   varieties: Array<{
     is_default: boolean;
     pokemon: {
@@ -84,27 +90,45 @@ interface PokedexEntry {
   url: string;
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}: ${response.status}`);
+async function fetchJson<T>(url: string, retries = 3): Promise<T> {
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.json() as Promise<T>;
+    } catch (error) {
+      if (attempt === retries - 1) {
+        throw new Error(`Failed to fetch ${url} after ${retries} attempts: ${error}`);
+      }
+      const delay = 1000 * (attempt + 1);
+      console.warn(`  Retry ${attempt + 1}/${retries} for ${url} in ${delay}ms...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
   }
-  return response.json() as Promise<T>;
+  throw new Error('Unreachable');
 }
 
-async function downloadSprite(url: string, filename: string): Promise<void> {
+async function downloadSprite(url: string, filename: string): Promise<boolean> {
   const filepath = path.join(SPRITES_DIR, filename);
   // Skip if already downloaded
   if (fs.existsSync(filepath)) {
-    return;
+    return true;
   }
-  const response = await fetch(url);
-  if (!response.ok) {
-    console.warn(`  Warning: Could not download sprite from ${url}`);
-    return;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.warn(`  Warning: Could not download sprite from ${url}: HTTP ${response.status}`);
+      return false;
+    }
+    const buffer = await response.arrayBuffer();
+    fs.writeFileSync(filepath, Buffer.from(buffer));
+    return true;
+  } catch (error) {
+    console.warn(`  Warning: Failed to download sprite from ${url}: ${error}`);
+    return false;
   }
-  const buffer = await response.arrayBuffer();
-  fs.writeFileSync(filepath, Buffer.from(buffer));
 }
 
 function formatDisplayName(name: string): string {
@@ -112,6 +136,17 @@ function formatDisplayName(name: string): string {
     .split('-')
     .map(part => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ');
+}
+
+function getEnglishName(species: PokeAPISpecies): string {
+  const englishEntry = species.names.find(n => n.language.name === 'en');
+  return englishEntry?.name || formatDisplayName(species.name);
+}
+
+function formatMegaDisplayName(baseDisplayName: string, megaName: string): string {
+  if (megaName.includes('-mega-x')) return `Mega ${baseDisplayName} X`;
+  if (megaName.includes('-mega-y')) return `Mega ${baseDisplayName} Y`;
+  return `Mega ${baseDisplayName}`;
 }
 
 function getMegaVariant(name: string): string | null {
@@ -123,6 +158,9 @@ function getMegaVariant(name: string): string | null {
 async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
   try {
     const species = await fetchJson<PokeAPISpecies>(speciesUrl);
+
+    // Get the proper English display name from species
+    const displayName = getEnglishName(species);
 
     // Find the default variety (base form)
     const defaultVariety = species.varieties.find(v => v.is_default);
@@ -143,9 +181,13 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
       return null;
     }
 
-    // Download sprite
+    // Download sprite - skip Pokemon if sprite download fails
     const spriteFilename = `${pokemon.name}.png`;
-    await downloadSprite(spriteUrl, spriteFilename);
+    const spriteDownloaded = await downloadSprite(spriteUrl, spriteFilename);
+    if (!spriteDownloaded) {
+      console.warn(`  Skipping ${pokemon.name} - sprite download failed`);
+      return null;
+    }
 
     // Find mega evolutions
     const megas: MegaEvolution[] = [];
@@ -158,15 +200,20 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
 
         if (megaSpriteUrl) {
           const megaSpriteFilename = `${megaPokemon.name}.png`;
-          await downloadSprite(megaSpriteUrl, megaSpriteFilename);
+          const megaSpriteDownloaded = await downloadSprite(megaSpriteUrl, megaSpriteFilename);
 
-          megas.push({
-            variant: getMegaVariant(megaPokemon.name),
-            name: megaPokemon.name,
-            displayName: formatDisplayName(megaPokemon.name),
-            types: megaPokemon.types.map(t => t.type.name),
-            sprite: `/sprites/${megaSpriteFilename}`,
-          });
+          // Only add mega if sprite downloaded successfully
+          if (megaSpriteDownloaded) {
+            megas.push({
+              variant: getMegaVariant(megaPokemon.name),
+              name: megaPokemon.name,
+              displayName: formatMegaDisplayName(displayName, megaPokemon.name),
+              types: megaPokemon.types.map(t => t.type.name),
+              sprite: `/sprites/${megaSpriteFilename}`,
+            });
+          } else {
+            console.warn(`  Skipping mega ${megaPokemon.name} - sprite download failed`);
+          }
         }
       }
     }
@@ -174,7 +221,7 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
     const result: Pokemon = {
       id: pokemon.id,
       name: pokemon.name,
-      displayName: formatDisplayName(pokemon.name),
+      displayName,
       types: pokemon.types.map(t => t.type.name),
       sprite: `/sprites/${spriteFilename}`,
     };
