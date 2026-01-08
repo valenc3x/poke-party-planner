@@ -7,6 +7,7 @@ import {
   getImmunities,
   getSuperEffectiveAgainst,
 } from '../utils/typeChart';
+import { getActiveTypes, getActiveName } from '../utils/teamUtils';
 
 interface TypeCoverageAnalysis {
   /** Types the team can hit super effectively */
@@ -35,9 +36,8 @@ export function useTypeCoverage(team: Team): TypeCoverageAnalysis {
     for (const slot of team) {
       if (!slot) continue;
 
-      const mega = slot.pokemon.megas?.[slot.megaIndex];
-      const types = slot.isMega && mega ? mega.types : slot.pokemon.types;
-      const name = slot.isMega && mega ? mega.displayName : slot.pokemon.displayName;
+      const types = getActiveTypes(slot);
+      const name = getActiveName(slot);
 
       // Calculate offensive coverage from Pokemon's types
       for (const type of types) {
@@ -78,7 +78,7 @@ export function useTypeCoverage(team: Team): TypeCoverageAnalysis {
         pokemonNames,
       });
     }
-    weaknessAnalysis.sort((a, b) => b.count - a.count);
+    weaknessAnalysis.sort((a, b) => b.count - a.count || a.type.localeCompare(b.type));
 
     // Separate critical (3+) and stacked (2) weaknesses
     const criticalWeaknesses = weaknessAnalysis.filter((w) => w.count >= 3);

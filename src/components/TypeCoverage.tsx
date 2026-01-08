@@ -36,13 +36,11 @@ export function TypeCoverage({
             style={{ width: `${coveragePercent}%` }}
           />
         </div>
-        {offensiveCoverage.size > 0 && (
-          <div className="flex flex-wrap gap-1 mt-2">
-            {ALL_TYPES.filter((t) => offensiveCoverage.has(t)).map((type) => (
-              <TypeBadge key={type} type={type} size="sm" />
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap gap-1 mt-2">
+          {ALL_TYPES.filter((t) => offensiveCoverage.has(t)).map((type) => (
+            <TypeBadge key={type} type={type} size="sm" />
+          ))}
+        </div>
       </div>
 
       {offensiveGaps.length > 0 && (

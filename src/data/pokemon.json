@@ -382,7 +382,7 @@
     {
       "id": 83,
       "name": "farfetchd",
-      "displayName": "Farfetchd",
+      "displayName": "Farfetch’d",
       "types": [
         "normal",
         "flying"
@@ -478,7 +478,7 @@
     {
       "id": 122,
       "name": "mr-mime",
-      "displayName": "Mr Mime",
+      "displayName": "Mr. Mime",
       "types": [
         "psychic",
         "fairy"
@@ -1495,7 +1495,7 @@
     {
       "id": 439,
       "name": "mime-jr",
-      "displayName": "Mime Jr",
+      "displayName": "Mime Jr.",
       "types": [
         "psychic",
         "fairy"
@@ -1610,7 +1610,7 @@
     {
       "id": 474,
       "name": "porygon-z",
-      "displayName": "Porygon Z",
+      "displayName": "Porygon-Z",
       "types": [
         "normal"
       ],
@@ -2150,7 +2150,7 @@
     {
       "id": 647,
       "name": "keldeo-ordinary",
-      "displayName": "Keldeo Ordinary",
+      "displayName": "Keldeo",
       "types": [
         "water",
         "fighting"
@@ -2160,7 +2160,7 @@
     {
       "id": 648,
       "name": "meloetta-aria",
-      "displayName": "Meloetta Aria",
+      "displayName": "Meloetta",
       "types": [
         "normal",
         "psychic"
@@ -2361,7 +2361,7 @@
     {
       "id": 669,
       "name": "flabebe",
-      "displayName": "Flabebe",
+      "displayName": "Flabébé",
       "types": [
         "fairy"
       ],
@@ -2443,7 +2443,7 @@
     {
       "id": 678,
       "name": "meowstic-male",
-      "displayName": "Meowstic Male",
+      "displayName": "Meowstic",
       "types": [
         "psychic"
       ],
@@ -2472,7 +2472,7 @@
     {
       "id": 681,
       "name": "aegislash-shield",
-      "displayName": "Aegislash Shield",
+      "displayName": "Aegislash",
       "types": [
         "steel",
         "ghost"
@@ -2752,7 +2752,7 @@
     {
       "id": 710,
       "name": "pumpkaboo-average",
-      "displayName": "Pumpkaboo Average",
+      "displayName": "Pumpkaboo",
       "types": [
         "ghost",
         "grass"
@@ -2762,7 +2762,7 @@
     {
       "id": 711,
       "name": "gourgeist-average",
-      "displayName": "Gourgeist Average",
+      "displayName": "Gourgeist",
       "types": [
         "ghost",
         "grass"
@@ -2829,7 +2829,7 @@
     {
       "id": 718,
       "name": "zygarde-50",
-      "displayName": "Zygarde 50",
+      "displayName": "Zygarde",
       "types": [
         "dragon",
         "ground"
@@ -2928,7 +2928,7 @@
     {
       "id": 778,
       "name": "mimikyu-disguised",
-      "displayName": "Mimikyu Disguised",
+      "displayName": "Mimikyu",
       "types": [
         "ghost",
         "fairy"
@@ -3051,7 +3051,7 @@
     {
       "id": 849,
       "name": "toxtricity-amped",
-      "displayName": "Toxtricity Amped",
+      "displayName": "Toxtricity",
       "types": [
         "electric",
         "poison"
@@ -3088,7 +3088,7 @@
     {
       "id": 865,
       "name": "sirfetchd",
-      "displayName": "Sirfetchd",
+      "displayName": "Sirfetch’d",
       "types": [
         "fighting"
       ],
@@ -3097,7 +3097,7 @@
     {
       "id": 866,
       "name": "mr-rime",
-      "displayName": "Mr Rime",
+      "displayName": "Mr. Rime",
       "types": [
         "ice",
         "psychic"
@@ -3126,7 +3126,7 @@
     {
       "id": 876,
       "name": "indeedee-male",
-      "displayName": "Indeedee Male",
+      "displayName": "Indeedee",
       "types": [
         "psychic",
         "normal"
@@ -3136,7 +3136,7 @@
     {
       "id": 877,
       "name": "morpeko-full-belly",
-      "displayName": "Morpeko Full Belly",
+      "displayName": "Morpeko",
       "types": [
         "electric",
         "dark"
@@ -3184,7 +3184,7 @@
     {
       "id": 931,
       "name": "squawkabilly-green-plumage",
-      "displayName": "Squawkabilly Green Plumage",
+      "displayName": "Squawkabilly",
       "types": [
         "normal",
         "flying"
@@ -3404,7 +3404,7 @@
     {
       "id": 978,
       "name": "tatsugiri-curly",
-      "displayName": "Tatsugiri Curly",
+      "displayName": "Tatsugiri",
       "types": [
         "dragon",
         "water"

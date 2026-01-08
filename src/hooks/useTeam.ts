@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
 import type { Pokemon, Team, TeamSlot, PokemonType } from '../types/pokemon';
 import { getWeaknesses } from '../utils/typeChart';
+import { getActiveTypes } from '../utils/teamUtils';
 
 const EMPTY_TEAM: Team = [null, null, null, null, null, null];
 
@@ -35,10 +36,22 @@ export function useTeam() {
   const toggleMega = useCallback((index: number) => {
     setTeam((current) => {
       const slot = current[index];
-      if (!slot || !slot.pokemon.megas?.length) return current;
+      const megas = slot?.pokemon.megas;
+      if (!slot || !megas?.length) return current;
 
       const newTeam = copyTeam(current);
-      newTeam[index] = { ...slot, isMega: !slot.isMega };
+
+      if (!slot.isMega) {
+        // Activate mega form
+        newTeam[index] = { ...slot, isMega: true, megaIndex: 0 };
+      } else if (megas.length > 1 && slot.megaIndex < megas.length - 1) {
+        // Cycle to next mega variant (e.g., Charizard X -> Y)
+        newTeam[index] = { ...slot, megaIndex: slot.megaIndex + 1 };
+      } else {
+        // Deactivate mega form
+        newTeam[index] = { ...slot, isMega: false, megaIndex: 0 };
+      }
+
       return newTeam;
     });
   }, []);
@@ -82,9 +95,7 @@ export function useTeam() {
     for (const slot of team) {
       if (!slot) continue;
 
-      const mega = slot.pokemon.megas?.[slot.megaIndex];
-      const types = slot.isMega && mega ? mega.types : slot.pokemon.types;
-
+      const types = getActiveTypes(slot);
       const weaknesses = getWeaknesses(types);
       for (const type of weaknesses.keys()) {
         counts.set(type, (counts.get(type) ?? 0) + 1);
