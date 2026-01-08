@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import { TeamBuilder } from './components/TeamBuilder';
 import { PokedexGrid } from './components/PokedexGrid';
 import { TypeCoverage } from './components/TypeCoverage';
@@ -29,6 +29,23 @@ function App() {
 
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
   const [showAnalysis, setShowAnalysis] = useState(true);
+  const [isSticky, setIsSticky] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   const {
     offensiveCoverage,
@@ -74,15 +91,26 @@ function App() {
         </div>
       </header>
 
+      {/* Sentinel for sticky detection */}
+      <div ref={sentinelRef} className="h-0" aria-hidden="true" />
+
       {/* Sticky team section */}
-      <div className="sticky top-0 z-10 bg-gray-100 dark:bg-gray-900 shadow-md">
-        <div className="container mx-auto px-4 py-3">
+      <div
+        className={`sticky top-0 z-10 bg-gray-100 dark:bg-gray-900 transition-shadow duration-200 ${
+          isSticky ? 'shadow-md' : ''
+        }`}
+      >
+        <div
+          className={`container mx-auto px-4 transition-all duration-200 ${
+            isSticky ? 'py-2' : 'py-4'
+          }`}
+        >
           <TeamBuilder
             team={team}
             onRemove={removePokemon}
             onToggleMega={toggleMega}
             onClear={clearTeam}
-            compact
+            compact={isSticky}
           />
         </div>
       </div>

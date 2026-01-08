@@ -19,9 +19,9 @@ export function TeamBuilder({
   const filledSlots = team.filter((slot) => slot !== null).length;
 
   return (
-    <div className={compact ? 'space-y-2' : 'space-y-4'}>
+    <div className={`transition-all duration-200 ${compact ? 'space-y-2' : 'space-y-4'}`}>
       <div className="flex items-center justify-between">
-        <h2 className={`font-semibold ${compact ? 'text-base' : 'text-lg'}`}>
+        <h2 className={`font-semibold ${compact ? 'text-base' : 'text-xl'}`}>
           Your Team ({filledSlots}/6)
         </h2>
         {filledSlots > 0 && (
@@ -34,7 +34,7 @@ export function TeamBuilder({
         )}
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+      <div className={`grid grid-cols-3 sm:grid-cols-6 ${compact ? 'gap-2' : 'gap-3'}`}>
         {team.map((slot, index) => (
           <TeamSlot
             key={index}

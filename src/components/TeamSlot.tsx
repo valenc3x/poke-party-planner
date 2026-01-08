@@ -19,8 +19,8 @@ export function TeamSlot({
   if (!slot) {
     return (
       <div
-        className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 ${
-          compact ? 'p-2 min-h-[80px]' : 'p-3 min-h-[140px]'
+        className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 transition-all duration-200 ${
+          compact ? 'p-2 min-h-[80px]' : 'p-4 min-h-[200px]'
         }`}
       >
         <span
@@ -46,8 +46,8 @@ export function TeamSlot({
 
   return (
     <div
-      className={`relative flex flex-col items-center rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 ${
-        compact ? 'p-1.5 min-h-[80px]' : 'p-3 min-h-[140px]'
+      className={`relative flex flex-col items-center rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-200 ${
+        compact ? 'p-1.5 min-h-[80px]' : 'p-4 min-h-[200px]'
       }`}
     >
       <button
@@ -55,7 +55,7 @@ export function TeamSlot({
         className={`absolute bg-red-500 text-white rounded-full font-bold hover:bg-red-600 transition-colors ${
           compact
             ? '-top-1.5 -right-1.5 w-5 h-5 text-xs'
-            : '-top-2 -right-2 w-6 h-6 text-sm'
+            : '-top-2.5 -right-2.5 w-7 h-7 text-base'
         }`}
         title="Remove from team"
       >
@@ -65,22 +65,22 @@ export function TeamSlot({
       <img
         src={currentSprite}
         alt={currentName}
-        className={`object-contain ${compact ? 'w-10 h-10' : 'w-16 h-16'}`}
+        className={`object-contain transition-all duration-200 ${compact ? 'w-10 h-10' : 'w-24 h-24'}`}
       />
 
       <span
         className={`font-medium text-center leading-tight ${
-          compact ? 'text-xs mt-0.5' : 'text-sm mt-1'
+          compact ? 'text-xs mt-0.5' : 'text-base mt-2'
         }`}
       >
         {compact ? pokemon.displayName.split(' ')[0] : currentName}
       </span>
 
       <div
-        className={`flex gap-0.5 flex-wrap justify-center ${compact ? 'mt-0.5' : 'mt-1'}`}
+        className={`flex flex-wrap justify-center ${compact ? 'gap-0.5 mt-0.5' : 'gap-1 mt-2'}`}
       >
         {currentTypes.map((type) => (
-          <TypeBadge key={type} type={type} size="xs" />
+          <TypeBadge key={type} type={type} size={compact ? 'xs' : 'sm'} />
         ))}
       </div>
 
@@ -88,7 +88,7 @@ export function TeamSlot({
         <button
           onClick={onToggleMega}
           className={`rounded transition-all ${
-            compact ? 'mt-1 p-0.5' : 'mt-2 p-1'
+            compact ? 'mt-1 p-0.5' : 'mt-3 p-1.5'
           } ${
             isMega
               ? 'bg-purple-500 hover:bg-purple-600 ring-2 ring-purple-300'
@@ -99,7 +99,7 @@ export function TeamSlot({
           <img
             src="/mega-icon.png"
             alt="Mega"
-            className={`${compact ? 'w-4 h-4' : 'w-5 h-5'} ${isMega ? '' : 'grayscale'}`}
+            className={`${compact ? 'w-4 h-4' : 'w-6 h-6'} ${isMega ? '' : 'grayscale'}`}
           />
         </button>
       )}
