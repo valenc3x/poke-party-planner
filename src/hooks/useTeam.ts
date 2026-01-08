@@ -1,7 +1,8 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import type { Pokemon, Team, TeamSlot, PokemonType } from '../types/pokemon';
 import { getWeaknesses } from '../utils/typeChart';
 import { getActiveTypes } from '../utils/teamUtils';
+import { usePersistedTeam } from './usePersistedState';
 
 const EMPTY_TEAM: Team = [null, null, null, null, null, null];
 
@@ -9,8 +10,9 @@ function copyTeam(team: Team): Team {
   return [...team] as Team;
 }
 
-export function useTeam() {
-  const [team, setTeam] = useState<Team>(EMPTY_TEAM);
+export function useTeam(pokemonLookup: Map<number, Pokemon>) {
+  const { team, setTeam, shareUrl, copyShareUrl } =
+    usePersistedTeam(pokemonLookup);
 
   const addPokemon = useCallback((pokemon: Pokemon) => {
     setTeam((current) => {
@@ -21,7 +23,7 @@ export function useTeam() {
       newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
       return newTeam;
     });
-  }, []);
+  }, [setTeam]);
 
   const removePokemon = useCallback((index: number) => {
     setTeam((current) => {
@@ -31,7 +33,7 @@ export function useTeam() {
       newTeam[index] = null;
       return newTeam;
     });
-  }, []);
+  }, [setTeam]);
 
   const toggleMega = useCallback((index: number) => {
     setTeam((current) => {
@@ -54,11 +56,11 @@ export function useTeam() {
 
       return newTeam;
     });
-  }, []);
+  }, [setTeam]);
 
   const clearTeam = useCallback(() => {
     setTeam(EMPTY_TEAM);
-  }, []);
+  }, [setTeam]);
 
   const togglePokemon = useCallback((pokemon: Pokemon) => {
     setTeam((current) => {
@@ -79,7 +81,7 @@ export function useTeam() {
       newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
       return newTeam;
     });
-  }, []);
+  }, [setTeam]);
 
   const selectedIds = useMemo(() => {
     return new Set(
@@ -114,5 +116,7 @@ export function useTeam() {
     togglePokemon,
     selectedIds,
     teamWeaknessCounts,
+    shareUrl,
+    copyShareUrl,
   };
 }

@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react';
 import { TeamBuilder } from './components/TeamBuilder';
 import { PokedexGrid } from './components/PokedexGrid';
 import { TypeCoverage } from './components/TypeCoverage';
@@ -7,6 +8,14 @@ import { useTypeCoverage } from './hooks/useTypeCoverage';
 import { allPokemon } from './utils/loadPokemon';
 
 function App() {
+  const pokemonLookup = useMemo(() => {
+    const map = new Map<number, (typeof allPokemon)[number]>();
+    for (const pokemon of allPokemon) {
+      map.set(pokemon.id, pokemon);
+    }
+    return map;
+  }, []);
+
   const {
     team,
     removePokemon,
@@ -15,7 +24,10 @@ function App() {
     togglePokemon,
     selectedIds,
     teamWeaknessCounts,
-  } = useTeam();
+    copyShareUrl,
+  } = useTeam(pokemonLookup);
+
+  const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
 
   const {
     offensiveCoverage,
@@ -29,12 +41,35 @@ function App() {
 
   const hasTeamMembers = team.some((slot) => slot !== null);
 
+  const handleShare = async () => {
+    const success = await copyShareUrl();
+    setCopyFeedback(success ? 'Link copied!' : 'Failed to copy');
+    setTimeout(() => setCopyFeedback(null), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
       <header className="bg-red-600 text-white py-4 shadow-lg">
-        <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold">Poke Party Planner</h1>
-          <p className="text-red-100">Pokemon Legends Z-A Team Builder</p>
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold">Poke Party Planner</h1>
+            <p className="text-red-100">Pokemon Legends Z-A Team Builder</p>
+          </div>
+          {hasTeamMembers && (
+            <div className="relative">
+              <button
+                onClick={handleShare}
+                className="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-red-50 transition-colors"
+              >
+                Share Team
+              </button>
+              {copyFeedback && (
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm bg-gray-800 text-white px-2 py-1 rounded whitespace-nowrap">
+                  {copyFeedback}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </header>
 
