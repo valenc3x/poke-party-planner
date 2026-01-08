@@ -21,6 +21,7 @@ function App() {
     team,
     removePokemon,
     toggleMega,
+    toggleShiny,
     clearTeam,
     togglePokemon,
     selectedIds,
@@ -121,6 +122,7 @@ function App() {
             team={team}
             onRemove={removePokemon}
             onToggleMega={toggleMega}
+            onToggleShiny={toggleShiny}
             onClear={clearTeam}
             compact={isSticky}
           />

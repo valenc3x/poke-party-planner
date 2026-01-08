@@ -19,7 +19,7 @@ export function useTeam(pokemonLookup: Map<number, Pokemon>) {
       if (emptyIndex === -1) return current;
 
       const newTeam = copyTeam(current);
-      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
+      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0, isShiny: false };
       return newTeam;
     });
   }, [setTeam]);
@@ -57,6 +57,17 @@ export function useTeam(pokemonLookup: Map<number, Pokemon>) {
     });
   }, [setTeam]);
 
+  const toggleShiny = useCallback((index: number) => {
+    setTeam((current) => {
+      const slot = current[index];
+      if (!slot) return current;
+
+      const newTeam = copyTeam(current);
+      newTeam[index] = { ...slot, isShiny: !slot.isShiny };
+      return newTeam;
+    });
+  }, [setTeam]);
+
   const clearTeam = useCallback(() => {
     setTeam(EMPTY_TEAM);
   }, [setTeam]);
@@ -77,7 +88,7 @@ export function useTeam(pokemonLookup: Map<number, Pokemon>) {
       if (emptyIndex === -1) return current;
 
       const newTeam = copyTeam(current);
-      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0 };
+      newTeam[emptyIndex] = { pokemon, isMega: false, megaIndex: 0, isShiny: false };
       return newTeam;
     });
   }, [setTeam]);
@@ -111,6 +122,7 @@ export function useTeam(pokemonLookup: Map<number, Pokemon>) {
     addPokemon,
     removePokemon,
     toggleMega,
+    toggleShiny,
     clearTeam,
     togglePokemon,
     selectedIds,

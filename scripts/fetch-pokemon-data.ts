@@ -17,6 +17,7 @@ import * as path from "path";
 
 const POKEAPI_BASE = "https://pokeapi.co/api/v2";
 const POKEOS_SPRITE_BASE = "https://s3.pokeos.com/pokeos-uploads/assets/pokemon/home/render";
+const POKEOS_SHINY_SPRITE_BASE = "https://s3.pokeos.com/pokeos-uploads/assets/pokemon/home/render/shiny";
 
 // Pokemon Legends Z-A uses two Pokedex IDs
 const POKEDEX_IDS = [34, 35];
@@ -24,6 +25,7 @@ const POKEDEX_IDS = [34, 35];
 // Output paths
 const DATA_DIR = path.join(process.cwd(), "src/data");
 const SPRITES_DIR = path.join(process.cwd(), "public/sprites");
+const SHINY_SPRITES_DIR = path.join(process.cwd(), "public/sprites/shiny");
 
 // Default placeholder sprite path (user should provide this file)
 const DEFAULT_SPRITE = "/sprites/default-mega.png";
@@ -55,6 +57,9 @@ interface PokeAPISpecies {
       url: string;
     };
   }>;
+  evolution_chain: {
+    url: string;
+  };
 }
 
 interface PokeAPIPokemon {
@@ -68,13 +73,63 @@ interface PokeAPIPokemon {
   }>;
 }
 
+interface EvolutionChainLink {
+  species: {
+    name: string;
+  };
+  evolves_to: EvolutionChainLink[];
+}
+
+interface PokeAPIEvolutionChain {
+  chain: EvolutionChainLink;
+}
+
+// Cache for evolution chains to avoid redundant fetches
+const evolutionChainCache = new Map<string, Set<string>>();
+
+async function getFinalEvolutions(evolutionChainUrl: string): Promise<Set<string>> {
+  // Check cache first
+  if (evolutionChainCache.has(evolutionChainUrl)) {
+    return evolutionChainCache.get(evolutionChainUrl)!;
+  }
+
+  const finalEvolutions = new Set<string>();
+
+  try {
+    const chain = await fetchJson<PokeAPIEvolutionChain>(evolutionChainUrl);
+
+    // Recursively find all final evolutions (species with no evolves_to)
+    function findFinalEvolutions(link: EvolutionChainLink): void {
+      if (link.evolves_to.length === 0) {
+        // This is a final evolution
+        finalEvolutions.add(link.species.name);
+      } else {
+        // Check each evolution branch
+        for (const nextLink of link.evolves_to) {
+          findFinalEvolutions(nextLink);
+        }
+      }
+    }
+
+    findFinalEvolutions(chain.chain);
+  } catch (error) {
+    console.warn(`  Could not fetch evolution chain: ${error}`);
+    // If we can't fetch the chain, assume it's a final evolution
+  }
+
+  evolutionChainCache.set(evolutionChainUrl, finalEvolutions);
+  return finalEvolutions;
+}
+
 interface Pokemon {
   id: number;
   name: string;
   displayName: string;
   types: string[];
   sprite: string;
+  shinySprite: string;
   megas?: MegaEvolution[];
+  isFinalEvolution: boolean;
 }
 
 interface MegaEvolution {
@@ -83,6 +138,7 @@ interface MegaEvolution {
   displayName: string;
   types: string[];
   sprite: string;
+  shinySprite: string;
 }
 
 interface PokedexEntry {
@@ -150,6 +206,42 @@ function getPokeOSBaseSpriteUrl(pokemonId: number): string {
   return `${POKEOS_SPRITE_BASE}/${pokemonId}.png`;
 }
 
+function getPokeOSShinySpriteUrl(pokemonId: number, megaVariant?: string | null): string {
+  if (megaVariant === undefined) {
+    // Base form shiny
+    return `${POKEOS_SHINY_SPRITE_BASE}/${pokemonId}.png`;
+  }
+  if (!megaVariant) {
+    // Regular mega shiny (no X/Y/Z variant)
+    return `${POKEOS_SHINY_SPRITE_BASE}/${pokemonId}-mega.png`;
+  }
+  // Mega with variant shiny (X, Y, or Z)
+  return `${POKEOS_SHINY_SPRITE_BASE}/${pokemonId}-mega-${megaVariant}.png`;
+}
+
+async function downloadShinySprite(url: string, filename: string): Promise<boolean> {
+  const filepath = path.join(SHINY_SPRITES_DIR, filename);
+  // Skip if already downloaded
+  if (fs.existsSync(filepath)) {
+    return true;
+  }
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.warn(
+        `  Warning: Could not download shiny sprite from ${url}: HTTP ${response.status}`,
+      );
+      return false;
+    }
+    const buffer = await response.arrayBuffer();
+    fs.writeFileSync(filepath, Buffer.from(buffer));
+    return true;
+  } catch (error) {
+    console.warn(`  Warning: Failed to download shiny sprite from ${url}: ${error}`);
+    return false;
+  }
+}
+
 function formatDisplayName(name: string): string {
   return name
     .split("-")
@@ -186,6 +278,13 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
     // Get the proper English display name from species
     const displayName = getEnglishName(species);
 
+    // Check if this is a final evolution
+    let isFinalEvolution = true; // Default to true if we can't determine
+    if (species.evolution_chain?.url) {
+      const finalEvolutions = await getFinalEvolutions(species.evolution_chain.url);
+      isFinalEvolution = finalEvolutions.has(species.name) || finalEvolutions.size === 0;
+    }
+
     // Find the default variety (base form)
     const defaultVariety = species.varieties.find((v) => v.is_default);
     if (!defaultVariety) {
@@ -204,6 +303,13 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
       console.warn(`  Skipping ${pokemon.name} - sprite download failed`);
       return null;
     }
+
+    // Download shiny sprite
+    const shinySpriteUrl = getPokeOSShinySpriteUrl(pokemon.id);
+    const shinyDownloaded = await downloadShinySprite(shinySpriteUrl, spriteFilename);
+    const shinySpritePath = shinyDownloaded
+      ? `/sprites/shiny/${spriteFilename}`
+      : `/sprites/${spriteFilename}`; // Fallback to regular sprite
 
     // Find mega evolutions
     const megas: MegaEvolution[] = [];
@@ -239,12 +345,20 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
           megaSpritePath = DEFAULT_SPRITE;
         }
 
+        // Download shiny mega sprite
+        const megaShinySpriteUrl = getPokeOSShinySpriteUrl(pokemon.id, megaVariant);
+        const megaShinyDownloaded = await downloadShinySprite(megaShinySpriteUrl, megaSpriteFilename);
+        const megaShinySpritePath = megaShinyDownloaded
+          ? `/sprites/shiny/${megaSpriteFilename}`
+          : megaSpritePath; // Fallback to regular mega sprite
+
         megas.push({
           variant: megaVariant,
           name: megaPokemon.name,
           displayName: formatMegaDisplayName(displayName, megaPokemon.name),
           types: megaPokemon.types.map((t) => t.type.name),
           sprite: megaSpritePath,
+          shinySprite: megaShinySpritePath,
         });
       }
     }
@@ -255,6 +369,8 @@ async function fetchPokemonData(speciesUrl: string): Promise<Pokemon | null> {
       displayName,
       types: pokemon.types.map((t) => t.type.name),
       sprite: `/sprites/${spriteFilename}`,
+      shinySprite: shinySpritePath,
+      isFinalEvolution,
     };
 
     if (megas.length > 0) {
@@ -280,6 +396,9 @@ async function main() {
   }
   if (!fs.existsSync(SPRITES_DIR)) {
     fs.mkdirSync(SPRITES_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(SHINY_SPRITES_DIR)) {
+    fs.mkdirSync(SHINY_SPRITES_DIR, { recursive: true });
   }
 
   // Collect all unique Pokemon entries from all Pokedexes

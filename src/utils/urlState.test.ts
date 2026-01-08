@@ -9,6 +9,8 @@ const mockPokemon: Pokemon[] = [
     displayName: 'Pikachu',
     types: ['electric'],
     sprite: '/sprites/25.png',
+    shinySprite: '/sprites/shiny/25.png',
+    isFinalEvolution: false,
   },
   {
     id: 6,
@@ -16,6 +18,8 @@ const mockPokemon: Pokemon[] = [
     displayName: 'Charizard',
     types: ['fire', 'flying'],
     sprite: '/sprites/6.png',
+    shinySprite: '/sprites/shiny/6.png',
+    isFinalEvolution: true,
     megas: [
       {
         variant: 'x',
@@ -23,6 +27,7 @@ const mockPokemon: Pokemon[] = [
         displayName: 'Mega Charizard X',
         types: ['fire', 'dragon'],
         sprite: '/sprites/6-mega-x.png',
+        shinySprite: '/sprites/shiny/6-mega-x.png',
       },
       {
         variant: 'y',
@@ -30,6 +35,7 @@ const mockPokemon: Pokemon[] = [
         displayName: 'Mega Charizard Y',
         types: ['fire', 'flying'],
         sprite: '/sprites/6-mega-y.png',
+        shinySprite: '/sprites/shiny/6-mega-y.png',
       },
     ],
   },
@@ -39,6 +45,8 @@ const mockPokemon: Pokemon[] = [
     displayName: 'Blastoise',
     types: ['water'],
     sprite: '/sprites/9.png',
+    shinySprite: '/sprites/shiny/9.png',
+    isFinalEvolution: true,
     megas: [
       {
         variant: null,
@@ -46,6 +54,7 @@ const mockPokemon: Pokemon[] = [
         displayName: 'Mega Blastoise',
         types: ['water'],
         sprite: '/sprites/9-mega.png',
+        shinySprite: '/sprites/shiny/9-mega.png',
       },
     ],
   },
@@ -64,7 +73,7 @@ describe('urlState', () => {
 
     it('encodes a team with one pokemon', () => {
       const team: Team = [
-        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0 },
+        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0, isShiny: false },
         null,
         null,
         null,
@@ -76,7 +85,7 @@ describe('urlState', () => {
 
     it('encodes a team with mega pokemon', () => {
       const team: Team = [
-        { pokemon: mockPokemon[1], isMega: true, megaIndex: 0 },
+        { pokemon: mockPokemon[1], isMega: true, megaIndex: 0, isShiny: false },
         null,
         null,
         null,
@@ -88,7 +97,7 @@ describe('urlState', () => {
 
     it('encodes a team with mega variant Y', () => {
       const team: Team = [
-        { pokemon: mockPokemon[1], isMega: true, megaIndex: 1 },
+        { pokemon: mockPokemon[1], isMega: true, megaIndex: 1, isShiny: false },
         null,
         null,
         null,
@@ -100,9 +109,9 @@ describe('urlState', () => {
 
     it('encodes a full team', () => {
       const team: Team = [
-        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0 },
-        { pokemon: mockPokemon[1], isMega: true, megaIndex: 0 },
-        { pokemon: mockPokemon[2], isMega: false, megaIndex: 0 },
+        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0, isShiny: false },
+        { pokemon: mockPokemon[1], isMega: true, megaIndex: 0, isShiny: false },
+        { pokemon: mockPokemon[2], isMega: false, megaIndex: 0, isShiny: false },
         null,
         null,
         null,
@@ -158,9 +167,9 @@ describe('urlState', () => {
   describe('roundtrip', () => {
     it('encodes and decodes back to the same team', () => {
       const originalTeam: Team = [
-        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0 },
-        { pokemon: mockPokemon[1], isMega: true, megaIndex: 1 },
-        { pokemon: mockPokemon[2], isMega: true, megaIndex: 0 },
+        { pokemon: mockPokemon[0], isMega: false, megaIndex: 0, isShiny: false },
+        { pokemon: mockPokemon[1], isMega: true, megaIndex: 1, isShiny: false },
+        { pokemon: mockPokemon[2], isMega: true, megaIndex: 0, isShiny: false },
         null,
         null,
         null,

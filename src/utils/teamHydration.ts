@@ -4,6 +4,7 @@ export interface SerializedSlot {
   pokemonId: number;
   isMega: boolean;
   megaIndex: number;
+  isShiny?: boolean;
 }
 
 /**
@@ -25,5 +26,6 @@ export function hydrateSlot(
     pokemon,
     isMega: Boolean(hasMegas && slot.isMega),
     megaIndex: validMegaIndex ? slot.megaIndex : 0,
+    isShiny: slot.isShiny ?? false,
   };
 }

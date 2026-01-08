@@ -5,6 +5,7 @@ interface TeamBuilderProps {
   team: Team;
   onRemove: (index: number) => void;
   onToggleMega: (index: number) => void;
+  onToggleShiny: (index: number) => void;
   onClear: () => void;
   compact?: boolean;
 }
@@ -13,6 +14,7 @@ export function TeamBuilder({
   team,
   onRemove,
   onToggleMega,
+  onToggleShiny,
   onClear,
   compact = false,
 }: TeamBuilderProps) {
@@ -47,6 +49,7 @@ export function TeamBuilder({
             index={index}
             onRemove={() => onRemove(index)}
             onToggleMega={() => onToggleMega(index)}
+            onToggleShiny={() => onToggleShiny(index)}
             compact={compact}
           />
         ))}

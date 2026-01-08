@@ -8,7 +8,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/1.png"
+      "sprite": "/sprites/1.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/1.png"
     },
     {
       "id": 2,
@@ -18,7 +20,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/2.png"
+      "sprite": "/sprites/2.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/2.png"
     },
     {
       "id": 3,
@@ -28,7 +32,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/3.png"
+      "sprite": "/sprites/3.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/3.png"
     },
     {
       "id": 4,
@@ -37,7 +43,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/4.png"
+      "sprite": "/sprites/4.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/4.png"
     },
     {
       "id": 5,
@@ -46,7 +54,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/5.png"
+      "sprite": "/sprites/5.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/5.png"
     },
     {
       "id": 6,
@@ -56,7 +66,9 @@
         "fire",
         "flying"
       ],
-      "sprite": "/sprites/6.png"
+      "sprite": "/sprites/6.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/6.png"
     },
     {
       "id": 7,
@@ -65,7 +77,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/7.png"
+      "sprite": "/sprites/7.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/7.png"
     },
     {
       "id": 8,
@@ -74,7 +88,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/8.png"
+      "sprite": "/sprites/8.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/8.png"
     },
     {
       "id": 9,
@@ -83,7 +99,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/9.png"
+      "sprite": "/sprites/9.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/9.png"
     },
     {
       "id": 13,
@@ -93,7 +111,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/13.png"
+      "sprite": "/sprites/13.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/13.png"
     },
     {
       "id": 14,
@@ -103,7 +123,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/14.png"
+      "sprite": "/sprites/14.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/14.png"
     },
     {
       "id": 15,
@@ -113,7 +135,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/15.png"
+      "sprite": "/sprites/15.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/15.png"
     },
     {
       "id": 16,
@@ -123,7 +147,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/16.png"
+      "sprite": "/sprites/16.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/16.png"
     },
     {
       "id": 17,
@@ -133,7 +159,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/17.png"
+      "sprite": "/sprites/17.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/17.png"
     },
     {
       "id": 18,
@@ -143,7 +171,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/18.png"
+      "sprite": "/sprites/18.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/18.png"
     },
     {
       "id": 23,
@@ -152,7 +182,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/23.png"
+      "sprite": "/sprites/23.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/23.png"
     },
     {
       "id": 24,
@@ -161,7 +193,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/24.png"
+      "sprite": "/sprites/24.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/24.png"
     },
     {
       "id": 25,
@@ -170,7 +204,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/25.png"
+      "sprite": "/sprites/25.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/25.png"
     },
     {
       "id": 26,
@@ -179,7 +215,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/26.png"
+      "sprite": "/sprites/26.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/26.png"
     },
     {
       "id": 35,
@@ -188,7 +226,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/35.png"
+      "sprite": "/sprites/35.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/35.png"
     },
     {
       "id": 36,
@@ -197,7 +237,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/36.png"
+      "sprite": "/sprites/36.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/36.png"
     },
     {
       "id": 39,
@@ -207,7 +249,9 @@
         "normal",
         "fairy"
       ],
-      "sprite": "/sprites/39.png"
+      "sprite": "/sprites/39.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/39.png"
     },
     {
       "id": 40,
@@ -217,7 +261,9 @@
         "normal",
         "fairy"
       ],
-      "sprite": "/sprites/40.png"
+      "sprite": "/sprites/40.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/40.png"
     },
     {
       "id": 41,
@@ -227,7 +273,9 @@
         "poison",
         "flying"
       ],
-      "sprite": "/sprites/41.png"
+      "sprite": "/sprites/41.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/41.png"
     },
     {
       "id": 42,
@@ -237,7 +285,9 @@
         "poison",
         "flying"
       ],
-      "sprite": "/sprites/42.png"
+      "sprite": "/sprites/42.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/42.png"
     },
     {
       "id": 52,
@@ -246,7 +296,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/52.png"
+      "sprite": "/sprites/52.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/52.png"
     },
     {
       "id": 53,
@@ -255,7 +307,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/53.png"
+      "sprite": "/sprites/53.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/53.png"
     },
     {
       "id": 56,
@@ -264,7 +318,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/56.png"
+      "sprite": "/sprites/56.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/56.png"
     },
     {
       "id": 57,
@@ -273,7 +329,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/57.png"
+      "sprite": "/sprites/57.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/57.png"
     },
     {
       "id": 63,
@@ -282,7 +340,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/63.png"
+      "sprite": "/sprites/63.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/63.png"
     },
     {
       "id": 64,
@@ -291,7 +351,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/64.png"
+      "sprite": "/sprites/64.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/64.png"
     },
     {
       "id": 65,
@@ -300,7 +362,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/65.png"
+      "sprite": "/sprites/65.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/65.png"
     },
     {
       "id": 66,
@@ -309,7 +373,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/66.png"
+      "sprite": "/sprites/66.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/66.png"
     },
     {
       "id": 67,
@@ -318,7 +384,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/67.png"
+      "sprite": "/sprites/67.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/67.png"
     },
     {
       "id": 68,
@@ -327,7 +395,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/68.png"
+      "sprite": "/sprites/68.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/68.png"
     },
     {
       "id": 69,
@@ -337,7 +407,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/69.png"
+      "sprite": "/sprites/69.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/69.png"
     },
     {
       "id": 70,
@@ -347,7 +419,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/70.png"
+      "sprite": "/sprites/70.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/70.png"
     },
     {
       "id": 71,
@@ -357,7 +431,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/71.png"
+      "sprite": "/sprites/71.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/71.png"
     },
     {
       "id": 79,
@@ -367,7 +443,9 @@
         "water",
         "psychic"
       ],
-      "sprite": "/sprites/79.png"
+      "sprite": "/sprites/79.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/79.png"
     },
     {
       "id": 80,
@@ -377,7 +455,9 @@
         "water",
         "psychic"
       ],
-      "sprite": "/sprites/80.png"
+      "sprite": "/sprites/80.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/80.png"
     },
     {
       "id": 83,
@@ -387,7 +467,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/83.png"
+      "sprite": "/sprites/83.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/83.png"
     },
     {
       "id": 92,
@@ -397,7 +479,9 @@
         "ghost",
         "poison"
       ],
-      "sprite": "/sprites/92.png"
+      "sprite": "/sprites/92.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/92.png"
     },
     {
       "id": 93,
@@ -407,7 +491,9 @@
         "ghost",
         "poison"
       ],
-      "sprite": "/sprites/93.png"
+      "sprite": "/sprites/93.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/93.png"
     },
     {
       "id": 94,
@@ -417,7 +503,9 @@
         "ghost",
         "poison"
       ],
-      "sprite": "/sprites/94.png"
+      "sprite": "/sprites/94.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/94.png"
     },
     {
       "id": 95,
@@ -427,7 +515,9 @@
         "rock",
         "ground"
       ],
-      "sprite": "/sprites/95.png"
+      "sprite": "/sprites/95.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/95.png"
     },
     {
       "id": 104,
@@ -436,7 +526,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/104.png"
+      "sprite": "/sprites/104.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/104.png"
     },
     {
       "id": 105,
@@ -445,7 +537,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/105.png"
+      "sprite": "/sprites/105.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/105.png"
     },
     {
       "id": 115,
@@ -454,7 +548,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/115.png"
+      "sprite": "/sprites/115.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/115.png"
     },
     {
       "id": 120,
@@ -463,7 +559,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/120.png"
+      "sprite": "/sprites/120.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/120.png"
     },
     {
       "id": 121,
@@ -473,7 +571,9 @@
         "water",
         "psychic"
       ],
-      "sprite": "/sprites/121.png"
+      "sprite": "/sprites/121.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/121.png"
     },
     {
       "id": 122,
@@ -483,7 +583,9 @@
         "psychic",
         "fairy"
       ],
-      "sprite": "/sprites/122.png"
+      "sprite": "/sprites/122.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/122.png"
     },
     {
       "id": 123,
@@ -493,7 +595,9 @@
         "bug",
         "flying"
       ],
-      "sprite": "/sprites/123.png"
+      "sprite": "/sprites/123.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/123.png"
     },
     {
       "id": 127,
@@ -502,7 +606,9 @@
       "types": [
         "bug"
       ],
-      "sprite": "/sprites/127.png"
+      "sprite": "/sprites/127.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/127.png"
     },
     {
       "id": 129,
@@ -511,7 +617,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/129.png"
+      "sprite": "/sprites/129.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/129.png"
     },
     {
       "id": 130,
@@ -521,7 +629,9 @@
         "water",
         "flying"
       ],
-      "sprite": "/sprites/130.png"
+      "sprite": "/sprites/130.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/130.png"
     },
     {
       "id": 133,
@@ -530,7 +640,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/133.png"
+      "sprite": "/sprites/133.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/133.png"
     },
     {
       "id": 134,
@@ -539,7 +651,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/134.png"
+      "sprite": "/sprites/134.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/134.png"
     },
     {
       "id": 135,
@@ -548,7 +662,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/135.png"
+      "sprite": "/sprites/135.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/135.png"
     },
     {
       "id": 136,
@@ -557,7 +673,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/136.png"
+      "sprite": "/sprites/136.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/136.png"
     },
     {
       "id": 137,
@@ -566,7 +684,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/137.png"
+      "sprite": "/sprites/137.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/137.png"
     },
     {
       "id": 142,
@@ -576,7 +696,9 @@
         "rock",
         "flying"
       ],
-      "sprite": "/sprites/142.png"
+      "sprite": "/sprites/142.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/142.png"
     },
     {
       "id": 147,
@@ -585,7 +707,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/147.png"
+      "sprite": "/sprites/147.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/147.png"
     },
     {
       "id": 148,
@@ -594,7 +718,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/148.png"
+      "sprite": "/sprites/148.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/148.png"
     },
     {
       "id": 149,
@@ -604,7 +730,9 @@
         "dragon",
         "flying"
       ],
-      "sprite": "/sprites/149.png"
+      "sprite": "/sprites/149.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/149.png"
     },
     {
       "id": 150,
@@ -613,7 +741,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/150.png"
+      "sprite": "/sprites/150.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/150.png"
     },
     {
       "id": 152,
@@ -622,7 +752,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/152.png"
+      "sprite": "/sprites/152.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/152.png"
     },
     {
       "id": 153,
@@ -631,7 +763,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/153.png"
+      "sprite": "/sprites/153.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/153.png"
     },
     {
       "id": 154,
@@ -640,7 +774,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/154.png"
+      "sprite": "/sprites/154.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/154.png"
     },
     {
       "id": 158,
@@ -649,7 +785,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/158.png"
+      "sprite": "/sprites/158.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/158.png"
     },
     {
       "id": 159,
@@ -658,7 +796,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/159.png"
+      "sprite": "/sprites/159.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/159.png"
     },
     {
       "id": 160,
@@ -667,7 +807,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/160.png"
+      "sprite": "/sprites/160.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/160.png"
     },
     {
       "id": 167,
@@ -677,7 +819,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/167.png"
+      "sprite": "/sprites/167.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/167.png"
     },
     {
       "id": 168,
@@ -687,7 +831,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/168.png"
+      "sprite": "/sprites/168.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/168.png"
     },
     {
       "id": 169,
@@ -697,7 +843,9 @@
         "poison",
         "flying"
       ],
-      "sprite": "/sprites/169.png"
+      "sprite": "/sprites/169.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/169.png"
     },
     {
       "id": 172,
@@ -706,7 +854,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/172.png"
+      "sprite": "/sprites/172.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/172.png"
     },
     {
       "id": 173,
@@ -715,7 +865,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/173.png"
+      "sprite": "/sprites/173.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/173.png"
     },
     {
       "id": 174,
@@ -725,7 +877,9 @@
         "normal",
         "fairy"
       ],
-      "sprite": "/sprites/174.png"
+      "sprite": "/sprites/174.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/174.png"
     },
     {
       "id": 179,
@@ -734,7 +888,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/179.png"
+      "sprite": "/sprites/179.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/179.png"
     },
     {
       "id": 180,
@@ -743,7 +899,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/180.png"
+      "sprite": "/sprites/180.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/180.png"
     },
     {
       "id": 181,
@@ -752,7 +910,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/181.png"
+      "sprite": "/sprites/181.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/181.png"
     },
     {
       "id": 196,
@@ -761,7 +921,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/196.png"
+      "sprite": "/sprites/196.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/196.png"
     },
     {
       "id": 197,
@@ -770,7 +932,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/197.png"
+      "sprite": "/sprites/197.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/197.png"
     },
     {
       "id": 199,
@@ -780,7 +944,9 @@
         "water",
         "psychic"
       ],
-      "sprite": "/sprites/199.png"
+      "sprite": "/sprites/199.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/199.png"
     },
     {
       "id": 208,
@@ -790,7 +956,9 @@
         "steel",
         "ground"
       ],
-      "sprite": "/sprites/208.png"
+      "sprite": "/sprites/208.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/208.png"
     },
     {
       "id": 211,
@@ -800,7 +968,9 @@
         "water",
         "poison"
       ],
-      "sprite": "/sprites/211.png"
+      "sprite": "/sprites/211.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/211.png"
     },
     {
       "id": 212,
@@ -810,7 +980,9 @@
         "bug",
         "steel"
       ],
-      "sprite": "/sprites/212.png"
+      "sprite": "/sprites/212.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/212.png"
     },
     {
       "id": 214,
@@ -820,7 +992,9 @@
         "bug",
         "fighting"
       ],
-      "sprite": "/sprites/214.png"
+      "sprite": "/sprites/214.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/214.png"
     },
     {
       "id": 225,
@@ -830,7 +1004,9 @@
         "ice",
         "flying"
       ],
-      "sprite": "/sprites/225.png"
+      "sprite": "/sprites/225.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/225.png"
     },
     {
       "id": 227,
@@ -840,7 +1016,9 @@
         "steel",
         "flying"
       ],
-      "sprite": "/sprites/227.png"
+      "sprite": "/sprites/227.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/227.png"
     },
     {
       "id": 228,
@@ -850,7 +1028,9 @@
         "dark",
         "fire"
       ],
-      "sprite": "/sprites/228.png"
+      "sprite": "/sprites/228.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/228.png"
     },
     {
       "id": 229,
@@ -860,7 +1040,9 @@
         "dark",
         "fire"
       ],
-      "sprite": "/sprites/229.png"
+      "sprite": "/sprites/229.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/229.png"
     },
     {
       "id": 233,
@@ -869,7 +1051,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/233.png"
+      "sprite": "/sprites/233.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/233.png"
     },
     {
       "id": 246,
@@ -879,7 +1063,9 @@
         "rock",
         "ground"
       ],
-      "sprite": "/sprites/246.png"
+      "sprite": "/sprites/246.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/246.png"
     },
     {
       "id": 247,
@@ -889,7 +1075,9 @@
         "rock",
         "ground"
       ],
-      "sprite": "/sprites/247.png"
+      "sprite": "/sprites/247.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/247.png"
     },
     {
       "id": 248,
@@ -899,7 +1087,9 @@
         "rock",
         "dark"
       ],
-      "sprite": "/sprites/248.png"
+      "sprite": "/sprites/248.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/248.png"
     },
     {
       "id": 252,
@@ -908,7 +1098,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/252.png"
+      "sprite": "/sprites/252.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/252.png"
     },
     {
       "id": 253,
@@ -917,7 +1109,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/253.png"
+      "sprite": "/sprites/253.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/253.png"
     },
     {
       "id": 254,
@@ -926,7 +1120,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/254.png"
+      "sprite": "/sprites/254.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/254.png"
     },
     {
       "id": 255,
@@ -935,7 +1131,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/255.png"
+      "sprite": "/sprites/255.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/255.png"
     },
     {
       "id": 256,
@@ -945,7 +1143,9 @@
         "fire",
         "fighting"
       ],
-      "sprite": "/sprites/256.png"
+      "sprite": "/sprites/256.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/256.png"
     },
     {
       "id": 257,
@@ -955,7 +1155,9 @@
         "fire",
         "fighting"
       ],
-      "sprite": "/sprites/257.png"
+      "sprite": "/sprites/257.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/257.png"
     },
     {
       "id": 258,
@@ -964,7 +1166,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/258.png"
+      "sprite": "/sprites/258.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/258.png"
     },
     {
       "id": 259,
@@ -974,7 +1178,9 @@
         "water",
         "ground"
       ],
-      "sprite": "/sprites/259.png"
+      "sprite": "/sprites/259.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/259.png"
     },
     {
       "id": 260,
@@ -984,7 +1190,9 @@
         "water",
         "ground"
       ],
-      "sprite": "/sprites/260.png"
+      "sprite": "/sprites/260.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/260.png"
     },
     {
       "id": 280,
@@ -994,7 +1202,9 @@
         "psychic",
         "fairy"
       ],
-      "sprite": "/sprites/280.png"
+      "sprite": "/sprites/280.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/280.png"
     },
     {
       "id": 281,
@@ -1004,7 +1214,9 @@
         "psychic",
         "fairy"
       ],
-      "sprite": "/sprites/281.png"
+      "sprite": "/sprites/281.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/281.png"
     },
     {
       "id": 282,
@@ -1014,7 +1226,9 @@
         "psychic",
         "fairy"
       ],
-      "sprite": "/sprites/282.png"
+      "sprite": "/sprites/282.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/282.png"
     },
     {
       "id": 302,
@@ -1024,7 +1238,9 @@
         "dark",
         "ghost"
       ],
-      "sprite": "/sprites/302.png"
+      "sprite": "/sprites/302.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/302.png"
     },
     {
       "id": 303,
@@ -1034,7 +1250,9 @@
         "steel",
         "fairy"
       ],
-      "sprite": "/sprites/303.png"
+      "sprite": "/sprites/303.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/303.png"
     },
     {
       "id": 304,
@@ -1044,7 +1262,9 @@
         "steel",
         "rock"
       ],
-      "sprite": "/sprites/304.png"
+      "sprite": "/sprites/304.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/304.png"
     },
     {
       "id": 305,
@@ -1054,7 +1274,9 @@
         "steel",
         "rock"
       ],
-      "sprite": "/sprites/305.png"
+      "sprite": "/sprites/305.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/305.png"
     },
     {
       "id": 306,
@@ -1064,7 +1286,9 @@
         "steel",
         "rock"
       ],
-      "sprite": "/sprites/306.png"
+      "sprite": "/sprites/306.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/306.png"
     },
     {
       "id": 307,
@@ -1074,7 +1298,9 @@
         "fighting",
         "psychic"
       ],
-      "sprite": "/sprites/307.png"
+      "sprite": "/sprites/307.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/307.png"
     },
     {
       "id": 308,
@@ -1084,7 +1310,9 @@
         "fighting",
         "psychic"
       ],
-      "sprite": "/sprites/308.png"
+      "sprite": "/sprites/308.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/308.png"
     },
     {
       "id": 309,
@@ -1093,7 +1321,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/309.png"
+      "sprite": "/sprites/309.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/309.png"
     },
     {
       "id": 310,
@@ -1102,7 +1332,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/310.png"
+      "sprite": "/sprites/310.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/310.png"
     },
     {
       "id": 315,
@@ -1112,7 +1344,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/315.png"
+      "sprite": "/sprites/315.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/315.png"
     },
     {
       "id": 316,
@@ -1121,7 +1355,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/316.png"
+      "sprite": "/sprites/316.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/316.png"
     },
     {
       "id": 317,
@@ -1130,7 +1366,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/317.png"
+      "sprite": "/sprites/317.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/317.png"
     },
     {
       "id": 318,
@@ -1140,7 +1378,9 @@
         "water",
         "dark"
       ],
-      "sprite": "/sprites/318.png"
+      "sprite": "/sprites/318.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/318.png"
     },
     {
       "id": 319,
@@ -1150,7 +1390,9 @@
         "water",
         "dark"
       ],
-      "sprite": "/sprites/319.png"
+      "sprite": "/sprites/319.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/319.png"
     },
     {
       "id": 322,
@@ -1160,7 +1402,9 @@
         "fire",
         "ground"
       ],
-      "sprite": "/sprites/322.png"
+      "sprite": "/sprites/322.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/322.png"
     },
     {
       "id": 323,
@@ -1170,7 +1414,9 @@
         "fire",
         "ground"
       ],
-      "sprite": "/sprites/323.png"
+      "sprite": "/sprites/323.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/323.png"
     },
     {
       "id": 325,
@@ -1179,7 +1425,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/325.png"
+      "sprite": "/sprites/325.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/325.png"
     },
     {
       "id": 326,
@@ -1188,7 +1436,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/326.png"
+      "sprite": "/sprites/326.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/326.png"
     },
     {
       "id": 333,
@@ -1198,7 +1448,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/333.png"
+      "sprite": "/sprites/333.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/333.png"
     },
     {
       "id": 334,
@@ -1208,7 +1460,9 @@
         "dragon",
         "flying"
       ],
-      "sprite": "/sprites/334.png"
+      "sprite": "/sprites/334.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/334.png"
     },
     {
       "id": 335,
@@ -1217,7 +1471,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/335.png"
+      "sprite": "/sprites/335.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/335.png"
     },
     {
       "id": 336,
@@ -1226,7 +1482,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/336.png"
+      "sprite": "/sprites/336.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/336.png"
     },
     {
       "id": 349,
@@ -1235,7 +1493,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/349.png"
+      "sprite": "/sprites/349.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/349.png"
     },
     {
       "id": 350,
@@ -1244,7 +1504,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/350.png"
+      "sprite": "/sprites/350.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/350.png"
     },
     {
       "id": 352,
@@ -1253,7 +1515,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/352.png"
+      "sprite": "/sprites/352.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/352.png"
     },
     {
       "id": 353,
@@ -1262,7 +1526,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/353.png"
+      "sprite": "/sprites/353.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/353.png"
     },
     {
       "id": 354,
@@ -1271,7 +1537,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/354.png"
+      "sprite": "/sprites/354.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/354.png"
     },
     {
       "id": 358,
@@ -1280,7 +1548,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/358.png"
+      "sprite": "/sprites/358.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/358.png"
     },
     {
       "id": 359,
@@ -1289,7 +1559,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/359.png"
+      "sprite": "/sprites/359.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/359.png"
     },
     {
       "id": 361,
@@ -1298,7 +1570,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/361.png"
+      "sprite": "/sprites/361.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/361.png"
     },
     {
       "id": 362,
@@ -1307,7 +1581,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/362.png"
+      "sprite": "/sprites/362.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/362.png"
     },
     {
       "id": 371,
@@ -1316,7 +1592,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/371.png"
+      "sprite": "/sprites/371.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/371.png"
     },
     {
       "id": 372,
@@ -1325,7 +1603,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/372.png"
+      "sprite": "/sprites/372.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/372.png"
     },
     {
       "id": 373,
@@ -1335,7 +1615,9 @@
         "dragon",
         "flying"
       ],
-      "sprite": "/sprites/373.png"
+      "sprite": "/sprites/373.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/373.png"
     },
     {
       "id": 374,
@@ -1345,7 +1627,9 @@
         "steel",
         "psychic"
       ],
-      "sprite": "/sprites/374.png"
+      "sprite": "/sprites/374.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/374.png"
     },
     {
       "id": 375,
@@ -1355,7 +1639,9 @@
         "steel",
         "psychic"
       ],
-      "sprite": "/sprites/375.png"
+      "sprite": "/sprites/375.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/375.png"
     },
     {
       "id": 376,
@@ -1365,7 +1651,9 @@
         "steel",
         "psychic"
       ],
-      "sprite": "/sprites/376.png"
+      "sprite": "/sprites/376.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/376.png"
     },
     {
       "id": 380,
@@ -1375,7 +1663,9 @@
         "dragon",
         "psychic"
       ],
-      "sprite": "/sprites/380.png"
+      "sprite": "/sprites/380.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/380.png"
     },
     {
       "id": 381,
@@ -1385,7 +1675,9 @@
         "dragon",
         "psychic"
       ],
-      "sprite": "/sprites/381.png"
+      "sprite": "/sprites/381.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/381.png"
     },
     {
       "id": 382,
@@ -1394,7 +1686,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/382.png"
+      "sprite": "/sprites/382.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/382.png"
     },
     {
       "id": 383,
@@ -1403,7 +1697,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/383.png"
+      "sprite": "/sprites/383.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/383.png"
     },
     {
       "id": 384,
@@ -1413,7 +1709,9 @@
         "dragon",
         "flying"
       ],
-      "sprite": "/sprites/384.png"
+      "sprite": "/sprites/384.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/384.png"
     },
     {
       "id": 396,
@@ -1423,7 +1721,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/396.png"
+      "sprite": "/sprites/396.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/396.png"
     },
     {
       "id": 397,
@@ -1433,7 +1733,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/397.png"
+      "sprite": "/sprites/397.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/397.png"
     },
     {
       "id": 398,
@@ -1443,7 +1745,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/398.png"
+      "sprite": "/sprites/398.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/398.png"
     },
     {
       "id": 406,
@@ -1453,7 +1757,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/406.png"
+      "sprite": "/sprites/406.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/406.png"
     },
     {
       "id": 407,
@@ -1463,7 +1769,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/407.png"
+      "sprite": "/sprites/407.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/407.png"
     },
     {
       "id": 427,
@@ -1472,7 +1780,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/427.png"
+      "sprite": "/sprites/427.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/427.png"
     },
     {
       "id": 428,
@@ -1481,7 +1791,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/428.png"
+      "sprite": "/sprites/428.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/428.png"
     },
     {
       "id": 433,
@@ -1490,7 +1802,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/433.png"
+      "sprite": "/sprites/433.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/433.png"
     },
     {
       "id": 439,
@@ -1500,7 +1814,9 @@
         "psychic",
         "fairy"
       ],
-      "sprite": "/sprites/439.png"
+      "sprite": "/sprites/439.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/439.png"
     },
     {
       "id": 443,
@@ -1510,7 +1826,9 @@
         "dragon",
         "ground"
       ],
-      "sprite": "/sprites/443.png"
+      "sprite": "/sprites/443.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/443.png"
     },
     {
       "id": 444,
@@ -1520,7 +1838,9 @@
         "dragon",
         "ground"
       ],
-      "sprite": "/sprites/444.png"
+      "sprite": "/sprites/444.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/444.png"
     },
     {
       "id": 445,
@@ -1530,7 +1850,9 @@
         "dragon",
         "ground"
       ],
-      "sprite": "/sprites/445.png"
+      "sprite": "/sprites/445.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/445.png"
     },
     {
       "id": 447,
@@ -1539,7 +1861,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/447.png"
+      "sprite": "/sprites/447.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/447.png"
     },
     {
       "id": 448,
@@ -1549,7 +1873,9 @@
         "fighting",
         "steel"
       ],
-      "sprite": "/sprites/448.png"
+      "sprite": "/sprites/448.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/448.png"
     },
     {
       "id": 449,
@@ -1558,7 +1884,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/449.png"
+      "sprite": "/sprites/449.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/449.png"
     },
     {
       "id": 450,
@@ -1567,7 +1895,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/450.png"
+      "sprite": "/sprites/450.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/450.png"
     },
     {
       "id": 459,
@@ -1577,7 +1907,9 @@
         "grass",
         "ice"
       ],
-      "sprite": "/sprites/459.png"
+      "sprite": "/sprites/459.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/459.png"
     },
     {
       "id": 460,
@@ -1587,7 +1919,9 @@
         "grass",
         "ice"
       ],
-      "sprite": "/sprites/460.png"
+      "sprite": "/sprites/460.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/460.png"
     },
     {
       "id": 470,
@@ -1596,7 +1930,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/470.png"
+      "sprite": "/sprites/470.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/470.png"
     },
     {
       "id": 471,
@@ -1605,7 +1941,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/471.png"
+      "sprite": "/sprites/471.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/471.png"
     },
     {
       "id": 474,
@@ -1614,7 +1952,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/474.png"
+      "sprite": "/sprites/474.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/474.png"
     },
     {
       "id": 475,
@@ -1624,7 +1964,9 @@
         "psychic",
         "fighting"
       ],
-      "sprite": "/sprites/475.png"
+      "sprite": "/sprites/475.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/475.png"
     },
     {
       "id": 478,
@@ -1634,7 +1976,9 @@
         "ice",
         "ghost"
       ],
-      "sprite": "/sprites/478.png"
+      "sprite": "/sprites/478.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/478.png"
     },
     {
       "id": 479,
@@ -1644,7 +1988,9 @@
         "electric",
         "ghost"
       ],
-      "sprite": "/sprites/479.png"
+      "sprite": "/sprites/479.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/479.png"
     },
     {
       "id": 485,
@@ -1654,7 +2000,9 @@
         "fire",
         "steel"
       ],
-      "sprite": "/sprites/485.png"
+      "sprite": "/sprites/485.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/485.png"
     },
     {
       "id": 491,
@@ -1663,7 +2011,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/491.png"
+      "sprite": "/sprites/491.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/491.png"
     },
     {
       "id": 498,
@@ -1672,7 +2022,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/498.png"
+      "sprite": "/sprites/498.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/498.png"
     },
     {
       "id": 499,
@@ -1682,7 +2034,9 @@
         "fire",
         "fighting"
       ],
-      "sprite": "/sprites/499.png"
+      "sprite": "/sprites/499.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/499.png"
     },
     {
       "id": 500,
@@ -1692,7 +2046,9 @@
         "fire",
         "fighting"
       ],
-      "sprite": "/sprites/500.png"
+      "sprite": "/sprites/500.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/500.png"
     },
     {
       "id": 504,
@@ -1701,7 +2057,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/504.png"
+      "sprite": "/sprites/504.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/504.png"
     },
     {
       "id": 505,
@@ -1710,7 +2068,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/505.png"
+      "sprite": "/sprites/505.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/505.png"
     },
     {
       "id": 509,
@@ -1719,7 +2079,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/509.png"
+      "sprite": "/sprites/509.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/509.png"
     },
     {
       "id": 510,
@@ -1728,7 +2090,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/510.png"
+      "sprite": "/sprites/510.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/510.png"
     },
     {
       "id": 511,
@@ -1737,7 +2101,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/511.png"
+      "sprite": "/sprites/511.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/511.png"
     },
     {
       "id": 512,
@@ -1746,7 +2112,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/512.png"
+      "sprite": "/sprites/512.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/512.png"
     },
     {
       "id": 513,
@@ -1755,7 +2123,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/513.png"
+      "sprite": "/sprites/513.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/513.png"
     },
     {
       "id": 514,
@@ -1764,7 +2134,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/514.png"
+      "sprite": "/sprites/514.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/514.png"
     },
     {
       "id": 515,
@@ -1773,7 +2145,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/515.png"
+      "sprite": "/sprites/515.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/515.png"
     },
     {
       "id": 516,
@@ -1782,7 +2156,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/516.png"
+      "sprite": "/sprites/516.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/516.png"
     },
     {
       "id": 517,
@@ -1791,7 +2167,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/517.png"
+      "sprite": "/sprites/517.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/517.png"
     },
     {
       "id": 518,
@@ -1800,7 +2178,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/518.png"
+      "sprite": "/sprites/518.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/518.png"
     },
     {
       "id": 529,
@@ -1809,7 +2189,9 @@
       "types": [
         "ground"
       ],
-      "sprite": "/sprites/529.png"
+      "sprite": "/sprites/529.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/529.png"
     },
     {
       "id": 530,
@@ -1819,7 +2201,9 @@
         "ground",
         "steel"
       ],
-      "sprite": "/sprites/530.png"
+      "sprite": "/sprites/530.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/530.png"
     },
     {
       "id": 531,
@@ -1828,7 +2212,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/531.png"
+      "sprite": "/sprites/531.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/531.png"
     },
     {
       "id": 538,
@@ -1837,7 +2223,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/538.png"
+      "sprite": "/sprites/538.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/538.png"
     },
     {
       "id": 539,
@@ -1846,7 +2234,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/539.png"
+      "sprite": "/sprites/539.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/539.png"
     },
     {
       "id": 543,
@@ -1856,7 +2246,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/543.png"
+      "sprite": "/sprites/543.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/543.png"
     },
     {
       "id": 544,
@@ -1866,7 +2258,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/544.png"
+      "sprite": "/sprites/544.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/544.png"
     },
     {
       "id": 545,
@@ -1876,7 +2270,9 @@
         "bug",
         "poison"
       ],
-      "sprite": "/sprites/545.png"
+      "sprite": "/sprites/545.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/545.png"
     },
     {
       "id": 551,
@@ -1886,7 +2282,9 @@
         "ground",
         "dark"
       ],
-      "sprite": "/sprites/551.png"
+      "sprite": "/sprites/551.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/551.png"
     },
     {
       "id": 552,
@@ -1896,7 +2294,9 @@
         "ground",
         "dark"
       ],
-      "sprite": "/sprites/552.png"
+      "sprite": "/sprites/552.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/552.png"
     },
     {
       "id": 553,
@@ -1906,7 +2306,9 @@
         "ground",
         "dark"
       ],
-      "sprite": "/sprites/553.png"
+      "sprite": "/sprites/553.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/553.png"
     },
     {
       "id": 559,
@@ -1916,7 +2318,9 @@
         "dark",
         "fighting"
       ],
-      "sprite": "/sprites/559.png"
+      "sprite": "/sprites/559.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/559.png"
     },
     {
       "id": 560,
@@ -1926,7 +2330,9 @@
         "dark",
         "fighting"
       ],
-      "sprite": "/sprites/560.png"
+      "sprite": "/sprites/560.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/560.png"
     },
     {
       "id": 562,
@@ -1935,7 +2341,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/562.png"
+      "sprite": "/sprites/562.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/562.png"
     },
     {
       "id": 563,
@@ -1944,7 +2352,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/563.png"
+      "sprite": "/sprites/563.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/563.png"
     },
     {
       "id": 568,
@@ -1953,7 +2363,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/568.png"
+      "sprite": "/sprites/568.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/568.png"
     },
     {
       "id": 569,
@@ -1962,7 +2374,9 @@
       "types": [
         "poison"
       ],
-      "sprite": "/sprites/569.png"
+      "sprite": "/sprites/569.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/569.png"
     },
     {
       "id": 582,
@@ -1971,7 +2385,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/582.png"
+      "sprite": "/sprites/582.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/582.png"
     },
     {
       "id": 583,
@@ -1980,7 +2396,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/583.png"
+      "sprite": "/sprites/583.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/583.png"
     },
     {
       "id": 584,
@@ -1989,7 +2407,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/584.png"
+      "sprite": "/sprites/584.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/584.png"
     },
     {
       "id": 587,
@@ -1999,7 +2419,9 @@
         "electric",
         "flying"
       ],
-      "sprite": "/sprites/587.png"
+      "sprite": "/sprites/587.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/587.png"
     },
     {
       "id": 590,
@@ -2009,7 +2431,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/590.png"
+      "sprite": "/sprites/590.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/590.png"
     },
     {
       "id": 591,
@@ -2019,7 +2443,9 @@
         "grass",
         "poison"
       ],
-      "sprite": "/sprites/591.png"
+      "sprite": "/sprites/591.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/591.png"
     },
     {
       "id": 602,
@@ -2028,7 +2454,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/602.png"
+      "sprite": "/sprites/602.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/602.png"
     },
     {
       "id": 603,
@@ -2037,7 +2465,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/603.png"
+      "sprite": "/sprites/603.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/603.png"
     },
     {
       "id": 604,
@@ -2046,7 +2476,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/604.png"
+      "sprite": "/sprites/604.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/604.png"
     },
     {
       "id": 607,
@@ -2056,7 +2488,9 @@
         "ghost",
         "fire"
       ],
-      "sprite": "/sprites/607.png"
+      "sprite": "/sprites/607.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/607.png"
     },
     {
       "id": 608,
@@ -2066,7 +2500,9 @@
         "ghost",
         "fire"
       ],
-      "sprite": "/sprites/608.png"
+      "sprite": "/sprites/608.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/608.png"
     },
     {
       "id": 609,
@@ -2076,7 +2512,9 @@
         "ghost",
         "fire"
       ],
-      "sprite": "/sprites/609.png"
+      "sprite": "/sprites/609.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/609.png"
     },
     {
       "id": 615,
@@ -2085,7 +2523,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/615.png"
+      "sprite": "/sprites/615.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/615.png"
     },
     {
       "id": 618,
@@ -2095,7 +2535,9 @@
         "ground",
         "electric"
       ],
-      "sprite": "/sprites/618.png"
+      "sprite": "/sprites/618.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/618.png"
     },
     {
       "id": 622,
@@ -2105,7 +2547,9 @@
         "ground",
         "ghost"
       ],
-      "sprite": "/sprites/622.png"
+      "sprite": "/sprites/622.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/622.png"
     },
     {
       "id": 623,
@@ -2115,7 +2559,9 @@
         "ground",
         "ghost"
       ],
-      "sprite": "/sprites/623.png"
+      "sprite": "/sprites/623.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/623.png"
     },
     {
       "id": 638,
@@ -2125,7 +2571,9 @@
         "steel",
         "fighting"
       ],
-      "sprite": "/sprites/638.png"
+      "sprite": "/sprites/638.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/638.png"
     },
     {
       "id": 639,
@@ -2135,7 +2583,9 @@
         "rock",
         "fighting"
       ],
-      "sprite": "/sprites/639.png"
+      "sprite": "/sprites/639.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/639.png"
     },
     {
       "id": 640,
@@ -2145,7 +2595,9 @@
         "grass",
         "fighting"
       ],
-      "sprite": "/sprites/640.png"
+      "sprite": "/sprites/640.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/640.png"
     },
     {
       "id": 647,
@@ -2155,7 +2607,9 @@
         "water",
         "fighting"
       ],
-      "sprite": "/sprites/647.png"
+      "sprite": "/sprites/647.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/647.png"
     },
     {
       "id": 648,
@@ -2165,7 +2619,9 @@
         "normal",
         "psychic"
       ],
-      "sprite": "/sprites/648.png"
+      "sprite": "/sprites/648.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/648.png"
     },
     {
       "id": 649,
@@ -2175,7 +2631,9 @@
         "bug",
         "steel"
       ],
-      "sprite": "/sprites/649.png"
+      "sprite": "/sprites/649.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/649.png"
     },
     {
       "id": 650,
@@ -2184,7 +2642,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/650.png"
+      "sprite": "/sprites/650.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/650.png"
     },
     {
       "id": 651,
@@ -2193,7 +2653,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/651.png"
+      "sprite": "/sprites/651.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/651.png"
     },
     {
       "id": 652,
@@ -2203,7 +2665,9 @@
         "grass",
         "fighting"
       ],
-      "sprite": "/sprites/652.png"
+      "sprite": "/sprites/652.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/652.png"
     },
     {
       "id": 653,
@@ -2212,7 +2676,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/653.png"
+      "sprite": "/sprites/653.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/653.png"
     },
     {
       "id": 654,
@@ -2221,7 +2687,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/654.png"
+      "sprite": "/sprites/654.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/654.png"
     },
     {
       "id": 655,
@@ -2231,7 +2699,9 @@
         "fire",
         "psychic"
       ],
-      "sprite": "/sprites/655.png"
+      "sprite": "/sprites/655.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/655.png"
     },
     {
       "id": 656,
@@ -2240,7 +2710,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/656.png"
+      "sprite": "/sprites/656.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/656.png"
     },
     {
       "id": 657,
@@ -2249,7 +2721,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/657.png"
+      "sprite": "/sprites/657.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/657.png"
     },
     {
       "id": 658,
@@ -2259,7 +2733,9 @@
         "water",
         "dark"
       ],
-      "sprite": "/sprites/658.png"
+      "sprite": "/sprites/658.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/658.png"
     },
     {
       "id": 659,
@@ -2268,7 +2744,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/659.png"
+      "sprite": "/sprites/659.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/659.png"
     },
     {
       "id": 660,
@@ -2278,7 +2756,9 @@
         "normal",
         "ground"
       ],
-      "sprite": "/sprites/660.png"
+      "sprite": "/sprites/660.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/660.png"
     },
     {
       "id": 661,
@@ -2288,7 +2768,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/661.png"
+      "sprite": "/sprites/661.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/661.png"
     },
     {
       "id": 662,
@@ -2298,7 +2780,9 @@
         "fire",
         "flying"
       ],
-      "sprite": "/sprites/662.png"
+      "sprite": "/sprites/662.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/662.png"
     },
     {
       "id": 663,
@@ -2308,7 +2792,9 @@
         "fire",
         "flying"
       ],
-      "sprite": "/sprites/663.png"
+      "sprite": "/sprites/663.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/663.png"
     },
     {
       "id": 664,
@@ -2317,7 +2803,9 @@
       "types": [
         "bug"
       ],
-      "sprite": "/sprites/664.png"
+      "sprite": "/sprites/664.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/664.png"
     },
     {
       "id": 665,
@@ -2326,7 +2814,9 @@
       "types": [
         "bug"
       ],
-      "sprite": "/sprites/665.png"
+      "sprite": "/sprites/665.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/665.png"
     },
     {
       "id": 666,
@@ -2336,7 +2826,9 @@
         "bug",
         "flying"
       ],
-      "sprite": "/sprites/666.png"
+      "sprite": "/sprites/666.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/666.png"
     },
     {
       "id": 667,
@@ -2346,7 +2838,9 @@
         "fire",
         "normal"
       ],
-      "sprite": "/sprites/667.png"
+      "sprite": "/sprites/667.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/667.png"
     },
     {
       "id": 668,
@@ -2356,7 +2850,9 @@
         "fire",
         "normal"
       ],
-      "sprite": "/sprites/668.png"
+      "sprite": "/sprites/668.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/668.png"
     },
     {
       "id": 669,
@@ -2365,7 +2861,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/669.png"
+      "sprite": "/sprites/669.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/669.png"
     },
     {
       "id": 670,
@@ -2374,7 +2872,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/670.png"
+      "sprite": "/sprites/670.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/670.png"
     },
     {
       "id": 671,
@@ -2383,7 +2883,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/671.png"
+      "sprite": "/sprites/671.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/671.png"
     },
     {
       "id": 672,
@@ -2392,7 +2894,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/672.png"
+      "sprite": "/sprites/672.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/672.png"
     },
     {
       "id": 673,
@@ -2401,7 +2905,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/673.png"
+      "sprite": "/sprites/673.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/673.png"
     },
     {
       "id": 674,
@@ -2410,7 +2916,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/674.png"
+      "sprite": "/sprites/674.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/674.png"
     },
     {
       "id": 675,
@@ -2420,7 +2928,9 @@
         "fighting",
         "dark"
       ],
-      "sprite": "/sprites/675.png"
+      "sprite": "/sprites/675.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/675.png"
     },
     {
       "id": 676,
@@ -2429,7 +2939,9 @@
       "types": [
         "normal"
       ],
-      "sprite": "/sprites/676.png"
+      "sprite": "/sprites/676.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/676.png"
     },
     {
       "id": 677,
@@ -2438,7 +2950,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/677.png"
+      "sprite": "/sprites/677.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/677.png"
     },
     {
       "id": 678,
@@ -2447,7 +2961,9 @@
       "types": [
         "psychic"
       ],
-      "sprite": "/sprites/678.png"
+      "sprite": "/sprites/678.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/678.png"
     },
     {
       "id": 679,
@@ -2457,7 +2973,9 @@
         "steel",
         "ghost"
       ],
-      "sprite": "/sprites/679.png"
+      "sprite": "/sprites/679.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/679.png"
     },
     {
       "id": 680,
@@ -2467,7 +2985,9 @@
         "steel",
         "ghost"
       ],
-      "sprite": "/sprites/680.png"
+      "sprite": "/sprites/680.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/680.png"
     },
     {
       "id": 681,
@@ -2477,7 +2997,9 @@
         "steel",
         "ghost"
       ],
-      "sprite": "/sprites/681.png"
+      "sprite": "/sprites/681.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/681.png"
     },
     {
       "id": 682,
@@ -2486,7 +3008,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/682.png"
+      "sprite": "/sprites/682.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/682.png"
     },
     {
       "id": 683,
@@ -2495,7 +3019,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/683.png"
+      "sprite": "/sprites/683.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/683.png"
     },
     {
       "id": 684,
@@ -2504,7 +3030,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/684.png"
+      "sprite": "/sprites/684.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/684.png"
     },
     {
       "id": 685,
@@ -2513,7 +3041,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/685.png"
+      "sprite": "/sprites/685.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/685.png"
     },
     {
       "id": 686,
@@ -2523,7 +3053,9 @@
         "dark",
         "psychic"
       ],
-      "sprite": "/sprites/686.png"
+      "sprite": "/sprites/686.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/686.png"
     },
     {
       "id": 687,
@@ -2533,7 +3065,9 @@
         "dark",
         "psychic"
       ],
-      "sprite": "/sprites/687.png"
+      "sprite": "/sprites/687.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/687.png"
     },
     {
       "id": 688,
@@ -2543,7 +3077,9 @@
         "rock",
         "water"
       ],
-      "sprite": "/sprites/688.png"
+      "sprite": "/sprites/688.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/688.png"
     },
     {
       "id": 689,
@@ -2553,7 +3089,9 @@
         "rock",
         "water"
       ],
-      "sprite": "/sprites/689.png"
+      "sprite": "/sprites/689.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/689.png"
     },
     {
       "id": 690,
@@ -2563,7 +3101,9 @@
         "poison",
         "water"
       ],
-      "sprite": "/sprites/690.png"
+      "sprite": "/sprites/690.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/690.png"
     },
     {
       "id": 691,
@@ -2573,7 +3113,9 @@
         "poison",
         "dragon"
       ],
-      "sprite": "/sprites/691.png"
+      "sprite": "/sprites/691.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/691.png"
     },
     {
       "id": 692,
@@ -2582,7 +3124,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/692.png"
+      "sprite": "/sprites/692.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/692.png"
     },
     {
       "id": 693,
@@ -2591,7 +3135,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/693.png"
+      "sprite": "/sprites/693.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/693.png"
     },
     {
       "id": 694,
@@ -2601,7 +3147,9 @@
         "electric",
         "normal"
       ],
-      "sprite": "/sprites/694.png"
+      "sprite": "/sprites/694.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/694.png"
     },
     {
       "id": 695,
@@ -2611,7 +3159,9 @@
         "electric",
         "normal"
       ],
-      "sprite": "/sprites/695.png"
+      "sprite": "/sprites/695.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/695.png"
     },
     {
       "id": 696,
@@ -2621,7 +3171,9 @@
         "rock",
         "dragon"
       ],
-      "sprite": "/sprites/696.png"
+      "sprite": "/sprites/696.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/696.png"
     },
     {
       "id": 697,
@@ -2631,7 +3183,9 @@
         "rock",
         "dragon"
       ],
-      "sprite": "/sprites/697.png"
+      "sprite": "/sprites/697.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/697.png"
     },
     {
       "id": 698,
@@ -2641,7 +3195,9 @@
         "rock",
         "ice"
       ],
-      "sprite": "/sprites/698.png"
+      "sprite": "/sprites/698.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/698.png"
     },
     {
       "id": 699,
@@ -2651,7 +3207,9 @@
         "rock",
         "ice"
       ],
-      "sprite": "/sprites/699.png"
+      "sprite": "/sprites/699.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/699.png"
     },
     {
       "id": 700,
@@ -2660,7 +3218,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/700.png"
+      "sprite": "/sprites/700.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/700.png"
     },
     {
       "id": 701,
@@ -2670,7 +3230,9 @@
         "fighting",
         "flying"
       ],
-      "sprite": "/sprites/701.png"
+      "sprite": "/sprites/701.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/701.png"
     },
     {
       "id": 702,
@@ -2680,7 +3242,9 @@
         "electric",
         "fairy"
       ],
-      "sprite": "/sprites/702.png"
+      "sprite": "/sprites/702.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/702.png"
     },
     {
       "id": 703,
@@ -2690,7 +3254,9 @@
         "rock",
         "fairy"
       ],
-      "sprite": "/sprites/703.png"
+      "sprite": "/sprites/703.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/703.png"
     },
     {
       "id": 704,
@@ -2699,7 +3265,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/704.png"
+      "sprite": "/sprites/704.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/704.png"
     },
     {
       "id": 705,
@@ -2708,7 +3276,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/705.png"
+      "sprite": "/sprites/705.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/705.png"
     },
     {
       "id": 706,
@@ -2717,7 +3287,9 @@
       "types": [
         "dragon"
       ],
-      "sprite": "/sprites/706.png"
+      "sprite": "/sprites/706.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/706.png"
     },
     {
       "id": 707,
@@ -2727,7 +3299,9 @@
         "steel",
         "fairy"
       ],
-      "sprite": "/sprites/707.png"
+      "sprite": "/sprites/707.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/707.png"
     },
     {
       "id": 708,
@@ -2737,7 +3311,9 @@
         "ghost",
         "grass"
       ],
-      "sprite": "/sprites/708.png"
+      "sprite": "/sprites/708.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/708.png"
     },
     {
       "id": 709,
@@ -2747,7 +3323,9 @@
         "ghost",
         "grass"
       ],
-      "sprite": "/sprites/709.png"
+      "sprite": "/sprites/709.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/709.png"
     },
     {
       "id": 710,
@@ -2757,7 +3335,9 @@
         "ghost",
         "grass"
       ],
-      "sprite": "/sprites/710.png"
+      "sprite": "/sprites/710.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/710.png"
     },
     {
       "id": 711,
@@ -2767,7 +3347,9 @@
         "ghost",
         "grass"
       ],
-      "sprite": "/sprites/711.png"
+      "sprite": "/sprites/711.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/711.png"
     },
     {
       "id": 712,
@@ -2776,7 +3358,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/712.png"
+      "sprite": "/sprites/712.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/712.png"
     },
     {
       "id": 713,
@@ -2785,7 +3369,9 @@
       "types": [
         "ice"
       ],
-      "sprite": "/sprites/713.png"
+      "sprite": "/sprites/713.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/713.png"
     },
     {
       "id": 714,
@@ -2795,7 +3381,9 @@
         "flying",
         "dragon"
       ],
-      "sprite": "/sprites/714.png"
+      "sprite": "/sprites/714.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/714.png"
     },
     {
       "id": 715,
@@ -2805,7 +3393,9 @@
         "flying",
         "dragon"
       ],
-      "sprite": "/sprites/715.png"
+      "sprite": "/sprites/715.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/715.png"
     },
     {
       "id": 716,
@@ -2814,7 +3404,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/716.png"
+      "sprite": "/sprites/716.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/716.png"
     },
     {
       "id": 717,
@@ -2824,7 +3416,9 @@
         "dark",
         "flying"
       ],
-      "sprite": "/sprites/717.png"
+      "sprite": "/sprites/717.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/717.png"
     },
     {
       "id": 718,
@@ -2834,7 +3428,9 @@
         "dragon",
         "ground"
       ],
-      "sprite": "/sprites/718.png"
+      "sprite": "/sprites/718.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/718.png"
     },
     {
       "id": 719,
@@ -2844,7 +3440,9 @@
         "rock",
         "fairy"
       ],
-      "sprite": "/sprites/719.png"
+      "sprite": "/sprites/719.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/719.png"
     },
     {
       "id": 720,
@@ -2854,7 +3452,9 @@
         "psychic",
         "ghost"
       ],
-      "sprite": "/sprites/720.png"
+      "sprite": "/sprites/720.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/720.png"
     },
     {
       "id": 721,
@@ -2864,7 +3464,9 @@
         "fire",
         "water"
       ],
-      "sprite": "/sprites/721.png"
+      "sprite": "/sprites/721.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/721.png"
     },
     {
       "id": 739,
@@ -2873,7 +3475,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/739.png"
+      "sprite": "/sprites/739.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/739.png"
     },
     {
       "id": 740,
@@ -2883,7 +3487,9 @@
         "fighting",
         "ice"
       ],
-      "sprite": "/sprites/740.png"
+      "sprite": "/sprites/740.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/740.png"
     },
     {
       "id": 767,
@@ -2893,7 +3499,9 @@
         "bug",
         "water"
       ],
-      "sprite": "/sprites/767.png"
+      "sprite": "/sprites/767.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/767.png"
     },
     {
       "id": 768,
@@ -2903,7 +3511,9 @@
         "bug",
         "water"
       ],
-      "sprite": "/sprites/768.png"
+      "sprite": "/sprites/768.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/768.png"
     },
     {
       "id": 769,
@@ -2913,7 +3523,9 @@
         "ghost",
         "ground"
       ],
-      "sprite": "/sprites/769.png"
+      "sprite": "/sprites/769.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/769.png"
     },
     {
       "id": 770,
@@ -2923,7 +3535,9 @@
         "ghost",
         "ground"
       ],
-      "sprite": "/sprites/770.png"
+      "sprite": "/sprites/770.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/770.png"
     },
     {
       "id": 778,
@@ -2933,7 +3547,9 @@
         "ghost",
         "fairy"
       ],
-      "sprite": "/sprites/778.png"
+      "sprite": "/sprites/778.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/778.png"
     },
     {
       "id": 780,
@@ -2943,7 +3559,9 @@
         "normal",
         "dragon"
       ],
-      "sprite": "/sprites/780.png"
+      "sprite": "/sprites/780.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/780.png"
     },
     {
       "id": 801,
@@ -2953,7 +3571,9 @@
         "steel",
         "fairy"
       ],
-      "sprite": "/sprites/801.png"
+      "sprite": "/sprites/801.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/801.png"
     },
     {
       "id": 802,
@@ -2963,7 +3583,9 @@
         "fighting",
         "ghost"
       ],
-      "sprite": "/sprites/802.png"
+      "sprite": "/sprites/802.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/802.png"
     },
     {
       "id": 807,
@@ -2972,7 +3594,9 @@
       "types": [
         "electric"
       ],
-      "sprite": "/sprites/807.png"
+      "sprite": "/sprites/807.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/807.png"
     },
     {
       "id": 808,
@@ -2981,7 +3605,9 @@
       "types": [
         "steel"
       ],
-      "sprite": "/sprites/808.png"
+      "sprite": "/sprites/808.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/808.png"
     },
     {
       "id": 809,
@@ -2990,7 +3616,9 @@
       "types": [
         "steel"
       ],
-      "sprite": "/sprites/809.png"
+      "sprite": "/sprites/809.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/809.png"
     },
     {
       "id": 821,
@@ -2999,7 +3627,9 @@
       "types": [
         "flying"
       ],
-      "sprite": "/sprites/821.png"
+      "sprite": "/sprites/821.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/821.png"
     },
     {
       "id": 822,
@@ -3008,7 +3638,9 @@
       "types": [
         "flying"
       ],
-      "sprite": "/sprites/822.png"
+      "sprite": "/sprites/822.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/822.png"
     },
     {
       "id": 823,
@@ -3018,7 +3650,9 @@
         "flying",
         "steel"
       ],
-      "sprite": "/sprites/823.png"
+      "sprite": "/sprites/823.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/823.png"
     },
     {
       "id": 827,
@@ -3027,7 +3661,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/827.png"
+      "sprite": "/sprites/827.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/827.png"
     },
     {
       "id": 828,
@@ -3036,7 +3672,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/828.png"
+      "sprite": "/sprites/828.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/828.png"
     },
     {
       "id": 848,
@@ -3046,7 +3684,9 @@
         "electric",
         "poison"
       ],
-      "sprite": "/sprites/848.png"
+      "sprite": "/sprites/848.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/848.png"
     },
     {
       "id": 849,
@@ -3056,7 +3696,9 @@
         "electric",
         "poison"
       ],
-      "sprite": "/sprites/849.png"
+      "sprite": "/sprites/849.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/849.png"
     },
     {
       "id": 852,
@@ -3065,7 +3707,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/852.png"
+      "sprite": "/sprites/852.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/852.png"
     },
     {
       "id": 853,
@@ -3074,7 +3718,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/853.png"
+      "sprite": "/sprites/853.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/853.png"
     },
     {
       "id": 863,
@@ -3083,7 +3729,9 @@
       "types": [
         "steel"
       ],
-      "sprite": "/sprites/863.png"
+      "sprite": "/sprites/863.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/863.png"
     },
     {
       "id": 865,
@@ -3092,7 +3740,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/865.png"
+      "sprite": "/sprites/865.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/865.png"
     },
     {
       "id": 866,
@@ -3102,7 +3752,9 @@
         "ice",
         "psychic"
       ],
-      "sprite": "/sprites/866.png"
+      "sprite": "/sprites/866.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/866.png"
     },
     {
       "id": 867,
@@ -3112,7 +3764,9 @@
         "ground",
         "ghost"
       ],
-      "sprite": "/sprites/867.png"
+      "sprite": "/sprites/867.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/867.png"
     },
     {
       "id": 870,
@@ -3121,7 +3775,9 @@
       "types": [
         "fighting"
       ],
-      "sprite": "/sprites/870.png"
+      "sprite": "/sprites/870.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/870.png"
     },
     {
       "id": 876,
@@ -3131,7 +3787,9 @@
         "psychic",
         "normal"
       ],
-      "sprite": "/sprites/876.png"
+      "sprite": "/sprites/876.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/876.png"
     },
     {
       "id": 877,
@@ -3141,7 +3799,9 @@
         "electric",
         "dark"
       ],
-      "sprite": "/sprites/877.png"
+      "sprite": "/sprites/877.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/877.png"
     },
     {
       "id": 900,
@@ -3151,7 +3811,9 @@
         "bug",
         "rock"
       ],
-      "sprite": "/sprites/900.png"
+      "sprite": "/sprites/900.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/900.png"
     },
     {
       "id": 904,
@@ -3161,7 +3823,9 @@
         "dark",
         "poison"
       ],
-      "sprite": "/sprites/904.png"
+      "sprite": "/sprites/904.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/904.png"
     },
     {
       "id": 926,
@@ -3170,7 +3834,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/926.png"
+      "sprite": "/sprites/926.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/926.png"
     },
     {
       "id": 927,
@@ -3179,7 +3845,9 @@
       "types": [
         "fairy"
       ],
-      "sprite": "/sprites/927.png"
+      "sprite": "/sprites/927.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/927.png"
     },
     {
       "id": 931,
@@ -3189,7 +3857,9 @@
         "normal",
         "flying"
       ],
-      "sprite": "/sprites/931.png"
+      "sprite": "/sprites/931.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/931.png"
     },
     {
       "id": 932,
@@ -3198,7 +3868,9 @@
       "types": [
         "rock"
       ],
-      "sprite": "/sprites/932.png"
+      "sprite": "/sprites/932.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/932.png"
     },
     {
       "id": 933,
@@ -3207,7 +3879,9 @@
       "types": [
         "rock"
       ],
-      "sprite": "/sprites/933.png"
+      "sprite": "/sprites/933.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/933.png"
     },
     {
       "id": 934,
@@ -3216,7 +3890,9 @@
       "types": [
         "rock"
       ],
-      "sprite": "/sprites/934.png"
+      "sprite": "/sprites/934.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/934.png"
     },
     {
       "id": 935,
@@ -3225,7 +3901,9 @@
       "types": [
         "fire"
       ],
-      "sprite": "/sprites/935.png"
+      "sprite": "/sprites/935.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/935.png"
     },
     {
       "id": 936,
@@ -3235,7 +3913,9 @@
         "fire",
         "psychic"
       ],
-      "sprite": "/sprites/936.png"
+      "sprite": "/sprites/936.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/936.png"
     },
     {
       "id": 937,
@@ -3245,7 +3925,9 @@
         "fire",
         "ghost"
       ],
-      "sprite": "/sprites/937.png"
+      "sprite": "/sprites/937.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/937.png"
     },
     {
       "id": 942,
@@ -3254,7 +3936,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/942.png"
+      "sprite": "/sprites/942.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/942.png"
     },
     {
       "id": 943,
@@ -3263,7 +3947,9 @@
       "types": [
         "dark"
       ],
-      "sprite": "/sprites/943.png"
+      "sprite": "/sprites/943.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/943.png"
     },
     {
       "id": 944,
@@ -3273,7 +3959,9 @@
         "poison",
         "normal"
       ],
-      "sprite": "/sprites/944.png"
+      "sprite": "/sprites/944.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/944.png"
     },
     {
       "id": 945,
@@ -3283,7 +3971,9 @@
         "poison",
         "normal"
       ],
-      "sprite": "/sprites/945.png"
+      "sprite": "/sprites/945.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/945.png"
     },
     {
       "id": 951,
@@ -3292,7 +3982,9 @@
       "types": [
         "grass"
       ],
-      "sprite": "/sprites/951.png"
+      "sprite": "/sprites/951.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/951.png"
     },
     {
       "id": 952,
@@ -3302,7 +3994,9 @@
         "grass",
         "fire"
       ],
-      "sprite": "/sprites/952.png"
+      "sprite": "/sprites/952.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/952.png"
     },
     {
       "id": 957,
@@ -3312,7 +4006,9 @@
         "fairy",
         "steel"
       ],
-      "sprite": "/sprites/957.png"
+      "sprite": "/sprites/957.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/957.png"
     },
     {
       "id": 958,
@@ -3322,7 +4018,9 @@
         "fairy",
         "steel"
       ],
-      "sprite": "/sprites/958.png"
+      "sprite": "/sprites/958.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/958.png"
     },
     {
       "id": 959,
@@ -3332,7 +4030,9 @@
         "fairy",
         "steel"
       ],
-      "sprite": "/sprites/959.png"
+      "sprite": "/sprites/959.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/959.png"
     },
     {
       "id": 967,
@@ -3342,7 +4042,9 @@
         "dragon",
         "normal"
       ],
-      "sprite": "/sprites/967.png"
+      "sprite": "/sprites/967.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/967.png"
     },
     {
       "id": 969,
@@ -3352,7 +4054,9 @@
         "rock",
         "poison"
       ],
-      "sprite": "/sprites/969.png"
+      "sprite": "/sprites/969.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/969.png"
     },
     {
       "id": 970,
@@ -3362,7 +4066,9 @@
         "rock",
         "poison"
       ],
-      "sprite": "/sprites/970.png"
+      "sprite": "/sprites/970.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/970.png"
     },
     {
       "id": 971,
@@ -3371,7 +4077,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/971.png"
+      "sprite": "/sprites/971.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/971.png"
     },
     {
       "id": 972,
@@ -3380,7 +4088,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/972.png"
+      "sprite": "/sprites/972.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/972.png"
     },
     {
       "id": 973,
@@ -3390,7 +4100,9 @@
         "flying",
         "fighting"
       ],
-      "sprite": "/sprites/973.png"
+      "sprite": "/sprites/973.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/973.png"
     },
     {
       "id": 977,
@@ -3399,7 +4111,9 @@
       "types": [
         "water"
       ],
-      "sprite": "/sprites/977.png"
+      "sprite": "/sprites/977.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/977.png"
     },
     {
       "id": 978,
@@ -3409,7 +4123,9 @@
         "dragon",
         "water"
       ],
-      "sprite": "/sprites/978.png"
+      "sprite": "/sprites/978.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/978.png"
     },
     {
       "id": 979,
@@ -3419,7 +4135,9 @@
         "fighting",
         "ghost"
       ],
-      "sprite": "/sprites/979.png"
+      "sprite": "/sprites/979.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/979.png"
     },
     {
       "id": 996,
@@ -3429,7 +4147,9 @@
         "dragon",
         "ice"
       ],
-      "sprite": "/sprites/996.png"
+      "sprite": "/sprites/996.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/996.png"
     },
     {
       "id": 997,
@@ -3439,7 +4159,9 @@
         "dragon",
         "ice"
       ],
-      "sprite": "/sprites/997.png"
+      "sprite": "/sprites/997.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/997.png"
     },
     {
       "id": 998,
@@ -3449,7 +4171,9 @@
         "dragon",
         "ice"
       ],
-      "sprite": "/sprites/998.png"
+      "sprite": "/sprites/998.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/998.png"
     },
     {
       "id": 999,
@@ -3458,7 +4182,9 @@
       "types": [
         "ghost"
       ],
-      "sprite": "/sprites/999.png"
+      "sprite": "/sprites/999.png",
+      "isFinalEvolution": false,
+      "shinySprite": "/sprites/shiny/999.png"
     },
     {
       "id": 1000,
@@ -3468,7 +4194,9 @@
         "steel",
         "ghost"
       ],
-      "sprite": "/sprites/1000.png"
+      "sprite": "/sprites/1000.png",
+      "isFinalEvolution": true,
+      "shinySprite": "/sprites/shiny/1000.png"
     }
   ]
 }

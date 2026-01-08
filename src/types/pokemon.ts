@@ -24,6 +24,7 @@ export interface MegaEvolution {
   displayName: string;
   types: PokemonType[];
   sprite: string;
+  shinySprite: string;
 }
 
 export interface Pokemon {
@@ -32,13 +33,16 @@ export interface Pokemon {
   displayName: string;
   types: PokemonType[];
   sprite: string;
+  shinySprite: string;
   megas?: MegaEvolution[];
+  isFinalEvolution: boolean;
 }
 
 export interface TeamSlot {
   pokemon: Pokemon;
   isMega: boolean;
   megaIndex: number;
+  isShiny: boolean;
 }
 
 export type Team = [

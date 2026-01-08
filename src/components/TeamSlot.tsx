@@ -7,6 +7,7 @@ interface TeamSlotProps {
   index: number;
   onRemove: () => void;
   onToggleMega: () => void;
+  onToggleShiny: () => void;
   compact?: boolean;
 }
 
@@ -15,6 +16,7 @@ export const TeamSlot = memo(function TeamSlot({
   index,
   onRemove,
   onToggleMega,
+  onToggleShiny,
   compact = false,
 }: TeamSlotProps) {
   if (!slot) {
@@ -40,12 +42,16 @@ export const TeamSlot = memo(function TeamSlot({
     );
   }
 
-  const { pokemon, isMega, megaIndex } = slot;
+  const { pokemon, isMega, megaIndex, isShiny } = slot;
   const mega = pokemon.megas?.[megaIndex];
   const hasMega = !!mega;
   const currentTypes: PokemonType[] = isMega && mega ? mega.types : pokemon.types;
-  const currentSprite = isMega && mega ? mega.sprite : pokemon.sprite;
   const currentName = isMega && mega ? mega.displayName : pokemon.displayName;
+
+  // Determine sprite based on mega and shiny state
+  const baseSprite = isMega && mega ? mega.sprite : pokemon.sprite;
+  const shinySprite = isMega && mega ? mega.shinySprite : pokemon.shinySprite;
+  const currentSprite = isShiny ? shinySprite : baseSprite;
 
   return (
     <div
@@ -53,7 +59,7 @@ export const TeamSlot = memo(function TeamSlot({
         compact ? 'p-1 sm:p-1.5 min-h-[70px] sm:min-h-[80px]' : 'p-3 sm:p-4 min-h-[160px] sm:min-h-[200px]'
       }`}
       role="listitem"
-      aria-label={`${currentName}, ${currentTypes.join(' and ')} type${isMega ? ', Mega form active' : ''}`}
+      aria-label={`${currentName}, ${currentTypes.join(' and ')} type${isMega ? ', Mega form active' : ''}${isShiny ? ', Shiny' : ''}`}
     >
       <button
         onClick={onRemove}
@@ -91,27 +97,48 @@ export const TeamSlot = memo(function TeamSlot({
         ))}
       </div>
 
-      {hasMega && (
+      <div className={`flex gap-1 ${compact ? 'mt-0.5 sm:mt-1' : 'mt-2 sm:mt-3'}`}>
+        {hasMega && (
+          <button
+            onClick={onToggleMega}
+            className={`rounded transition-all focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 ${
+              compact ? 'p-0.5' : 'p-1 sm:p-1.5'
+            } ${
+              isMega
+                ? 'bg-purple-500 hover:bg-purple-600 ring-2 ring-purple-300'
+                : 'bg-gray-200 dark:bg-gray-700 hover:bg-purple-100 dark:hover:bg-purple-900 opacity-50 hover:opacity-100'
+            }`}
+            aria-label={isMega ? `Disable Mega Evolution for ${pokemon.displayName}` : `Enable Mega Evolution for ${pokemon.displayName}`}
+            aria-pressed={isMega}
+          >
+            <img
+              src="/mega-icon.png"
+              alt=""
+              aria-hidden="true"
+              className={`${compact ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-5 h-5 sm:w-6 sm:h-6'} ${isMega ? '' : 'grayscale'}`}
+            />
+          </button>
+        )}
         <button
-          onClick={onToggleMega}
-          className={`rounded transition-all focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 ${
-            compact ? 'mt-0.5 sm:mt-1 p-0.5' : 'mt-2 sm:mt-3 p-1 sm:p-1.5'
+          onClick={onToggleShiny}
+          className={`rounded transition-all focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-1 ${
+            compact ? 'p-0.5' : 'p-1 sm:p-1.5'
           } ${
-            isMega
-              ? 'bg-purple-500 hover:bg-purple-600 ring-2 ring-purple-300'
-              : 'bg-gray-200 dark:bg-gray-700 hover:bg-purple-100 dark:hover:bg-purple-900 opacity-50 hover:opacity-100'
+            isShiny
+              ? 'bg-yellow-400 hover:bg-yellow-500 ring-2 ring-yellow-300'
+              : 'bg-gray-200 dark:bg-gray-700 hover:bg-yellow-100 dark:hover:bg-yellow-900 opacity-50 hover:opacity-100'
           }`}
-          aria-label={isMega ? `Disable Mega Evolution for ${pokemon.displayName}` : `Enable Mega Evolution for ${pokemon.displayName}`}
-          aria-pressed={isMega}
+          aria-label={isShiny ? `Disable Shiny for ${pokemon.displayName}` : `Enable Shiny for ${pokemon.displayName}`}
+          aria-pressed={isShiny}
         >
-          <img
-            src="/mega-icon.png"
-            alt=""
+          <span
+            className={`${compact ? 'text-xs' : 'text-sm sm:text-base'} ${isShiny ? '' : 'grayscale opacity-60'}`}
             aria-hidden="true"
-            className={`${compact ? 'w-3 h-3 sm:w-4 sm:h-4' : 'w-5 h-5 sm:w-6 sm:h-6'} ${isMega ? '' : 'grayscale'}`}
-          />
+          >
+            ✨
+          </span>
         </button>
-      )}
+      </div>
     </div>
   );
 });
