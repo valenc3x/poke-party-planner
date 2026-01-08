@@ -1,0 +1,176 @@
+{
+  "megaEvolutions": {
+    "venusaur": {
+      "name": "venusaur-mega",
+      "displayName": "Mega Venusaur",
+      "types": ["grass", "poison"],
+      "sprite": "/sprites/venusaur-mega.png"
+    },
+    "charizard": {
+      "x": {
+        "name": "charizard-mega-x",
+        "displayName": "Mega Charizard X",
+        "types": ["fire", "dragon"],
+        "sprite": "/sprites/charizard-mega-x.png"
+      },
+      "y": {
+        "name": "charizard-mega-y",
+        "displayName": "Mega Charizard Y",
+        "types": ["fire", "flying"],
+        "sprite": "/sprites/charizard-mega-y.png"
+      }
+    },
+    "blastoise": {
+      "name": "blastoise-mega",
+      "displayName": "Mega Blastoise",
+      "types": ["water"],
+      "sprite": "/sprites/blastoise-mega.png"
+    },
+    "alakazam": {
+      "name": "alakazam-mega",
+      "displayName": "Mega Alakazam",
+      "types": ["psychic"],
+      "sprite": "/sprites/alakazam-mega.png"
+    },
+    "gengar": {
+      "name": "gengar-mega",
+      "displayName": "Mega Gengar",
+      "types": ["ghost", "poison"],
+      "sprite": "/sprites/gengar-mega.png"
+    },
+    "kangaskhan": {
+      "name": "kangaskhan-mega",
+      "displayName": "Mega Kangaskhan",
+      "types": ["normal"],
+      "sprite": "/sprites/kangaskhan-mega.png"
+    },
+    "pinsir": {
+      "name": "pinsir-mega",
+      "displayName": "Mega Pinsir",
+      "types": ["bug", "flying"],
+      "sprite": "/sprites/pinsir-mega.png"
+    },
+    "gyarados": {
+      "name": "gyarados-mega",
+      "displayName": "Mega Gyarados",
+      "types": ["water", "dark"],
+      "sprite": "/sprites/gyarados-mega.png"
+    },
+    "aerodactyl": {
+      "name": "aerodactyl-mega",
+      "displayName": "Mega Aerodactyl",
+      "types": ["rock", "flying"],
+      "sprite": "/sprites/aerodactyl-mega.png"
+    },
+    "mewtwo": {
+      "x": {
+        "name": "mewtwo-mega-x",
+        "displayName": "Mega Mewtwo X",
+        "types": ["psychic", "fighting"],
+        "sprite": "/sprites/mewtwo-mega-x.png"
+      },
+      "y": {
+        "name": "mewtwo-mega-y",
+        "displayName": "Mega Mewtwo Y",
+        "types": ["psychic"],
+        "sprite": "/sprites/mewtwo-mega-y.png"
+      }
+    },
+    "ampharos": {
+      "name": "ampharos-mega",
+      "displayName": "Mega Ampharos",
+      "types": ["electric", "dragon"],
+      "sprite": "/sprites/ampharos-mega.png"
+    },
+    "scizor": {
+      "name": "scizor-mega",
+      "displayName": "Mega Scizor",
+      "types": ["bug", "steel"],
+      "sprite": "/sprites/scizor-mega.png"
+    },
+    "heracross": {
+      "name": "heracross-mega",
+      "displayName": "Mega Heracross",
+      "types": ["bug", "fighting"],
+      "sprite": "/sprites/heracross-mega.png"
+    },
+    "houndoom": {
+      "name": "houndoom-mega",
+      "displayName": "Mega Houndoom",
+      "types": ["dark", "fire"],
+      "sprite": "/sprites/houndoom-mega.png"
+    },
+    "tyranitar": {
+      "name": "tyranitar-mega",
+      "displayName": "Mega Tyranitar",
+      "types": ["rock", "dark"],
+      "sprite": "/sprites/tyranitar-mega.png"
+    },
+    "blaziken": {
+      "name": "blaziken-mega",
+      "displayName": "Mega Blaziken",
+      "types": ["fire", "fighting"],
+      "sprite": "/sprites/blaziken-mega.png"
+    },
+    "gardevoir": {
+      "name": "gardevoir-mega",
+      "displayName": "Mega Gardevoir",
+      "types": ["psychic", "fairy"],
+      "sprite": "/sprites/gardevoir-mega.png"
+    },
+    "mawile": {
+      "name": "mawile-mega",
+      "displayName": "Mega Mawile",
+      "types": ["steel", "fairy"],
+      "sprite": "/sprites/mawile-mega.png"
+    },
+    "aggron": {
+      "name": "aggron-mega",
+      "displayName": "Mega Aggron",
+      "types": ["steel"],
+      "sprite": "/sprites/aggron-mega.png"
+    },
+    "medicham": {
+      "name": "medicham-mega",
+      "displayName": "Mega Medicham",
+      "types": ["fighting", "psychic"],
+      "sprite": "/sprites/medicham-mega.png"
+    },
+    "manectric": {
+      "name": "manectric-mega",
+      "displayName": "Mega Manectric",
+      "types": ["electric"],
+      "sprite": "/sprites/manectric-mega.png"
+    },
+    "banette": {
+      "name": "banette-mega",
+      "displayName": "Mega Banette",
+      "types": ["ghost"],
+      "sprite": "/sprites/banette-mega.png"
+    },
+    "absol": {
+      "name": "absol-mega",
+      "displayName": "Mega Absol",
+      "types": ["dark"],
+      "sprite": "/sprites/absol-mega.png"
+    },
+    "garchomp": {
+      "name": "garchomp-mega",
+      "displayName": "Mega Garchomp",
+      "types": ["dragon", "ground"],
+      "sprite": "/sprites/garchomp-mega.png"
+    },
+    "lucario": {
+      "name": "lucario-mega",
+      "displayName": "Mega Lucario",
+      "types": ["fighting", "steel"],
+      "sprite": "/sprites/lucario-mega.png"
+    },
+    "abomasnow": {
+      "name": "abomasnow-mega",
+      "displayName": "Mega Abomasnow",
+      "types": ["grass", "ice"],
+      "sprite": "/sprites/abomasnow-mega.png"
+    }
+  }
+}
